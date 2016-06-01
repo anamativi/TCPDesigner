@@ -1,3 +1,3 @@
 # TCPDeveloper
 
-Implementação de um sistema para gestão de evento científico.
+Implementation of a management system for scientific events in Java.
