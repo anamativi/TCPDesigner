@@ -1,15 +1,18 @@
+package UI;
 
+
+import UI.Command;
 import java.util.*;
 
 /**
  * 
  */
-public class RateArticleCommand extends Command {
+public class SelectArticleCommand extends Command {
 
     /**
      * Default constructor
      */
-    public RateArticleCommand() {
+    public SelectArticleCommand() {
     }
 
     /**

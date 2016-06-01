@@ -1,4 +1,11 @@
+package Service;
 
+
+import RLObjects.ResearchTopic;
+import RLObjects.University;
+import RLObjects.Researcher;
+import RLObjects.Conference;
+import RLObjects.Article;
 import java.util.*;
 
 /**
