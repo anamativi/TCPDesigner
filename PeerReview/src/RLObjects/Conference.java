@@ -1,51 +1,20 @@
 package RLObjects;
 
-
 import java.util.*;
 
-/**
- * 
- */
 public class Conference {
-
+    
+    public String initials;
+    public ArrayList<Article> articlesSubmitted;
+    public ArrayList<Article> articlesAllocated;
+    public ArrayList<Researcher> committeeMembers;
+    public Researcher coordinator;
+    
     /**
      * Default constructor
      */
     public Conference() {
     }
-
-    /**
-     * 
-     */
-    public string initials;
-
-    /**
-     * 
-     */
-    public arrayList<Article> articlesSubmitted;
-
-    /**
-     * 
-     */
-    public arrayList<Article> articlesAllocated;
-
-    /**
-     * 
-     */
-    public arrayList<Researcher> committeeMembers;
-
-    /**
-     * 
-     */
-    public Researcher coordinator;
-
-
-
-
-
-
-
-
 
     /**
      * @return
@@ -59,7 +28,7 @@ public class Conference {
      * @param article 
      * @return
      */
-    public arrayList<Researcher> getCandidateReviewers(Article article) {
+    public ArrayList<Researcher> getCandidateReviewers(Article article) {
         // TODO implement here
         return null;
     }
@@ -68,7 +37,7 @@ public class Conference {
      * @param researchCandidatesList 
      * @return
      */
-    public arrayList<Researcher> sortReviewers(arrayList<Researcher> researchCandidatesList) {
+    public ArrayList<Researcher> sortReviewers(ArrayList<Researcher> researchCandidatesList) {
         // TODO implement here
         return null;
     }
@@ -86,7 +55,7 @@ public class Conference {
     /**
      * @return
      */
-    public arrayList<Article> getAcceptedArticles() {
+    public ArrayList<Article> getAcceptedArticles() {
         // TODO implement here
         return null;
     }
@@ -94,7 +63,7 @@ public class Conference {
     /**
      * @return
      */
-    public arrayList<Article> getRejectedArticles() {
+    public ArrayList<Article> getRejectedArticles() {
         // TODO implement here
         return null;
     }
@@ -110,9 +79,9 @@ public class Conference {
     /**
      * @return
      */
-    public bool hasUnreviewedArticles() {
+    public boolean hasUnreviewedArticles() {
         // TODO implement here
-        return null;
+        return true;
     }
 
 }

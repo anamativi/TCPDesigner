@@ -1,59 +1,19 @@
 package RLObjects;
-
-
 import java.util.*;
 
-/**
- * 
- */
 public class Article {
-
-    /**
-     * Default constructor
-     */
+    
+    public int id;
+    public String title;
+    public Researcher author;
+    public ArrayList<Researcher> reviewers;
+    public Conference conference;
+    public ResearchTopic researchTopic;
+    public Map<Researcher,float> grades;    //This needs to have an object from some kind to reference to. Probably solved by creating Grade Class.
+    
     public Article() {
     }
-
-    /**
-     * 
-     */
-    public int id;
-
-    /**
-     * 
-     */
-    public string title;
-
-    /**
-     * 
-     */
-    public Researcher author;
-
-    /**
-     * 
-     */
-    public arrayList<Researcher> reviewers;
-
-    /**
-     * 
-     */
-    public Conference conference;
-
-    /**
-     * 
-     */
-    public ResearchTopic researchTopic;
-
-    /**
-     * 
-     */
-    public Map<Researcher, float> grades;
-
-
-
-
-
-
+    
     /**
      * @return
      */
@@ -74,9 +34,9 @@ public class Article {
      * @param researcher 
      * @return
      */
-    public bool isResearcherAllocated(Researcher researcher) {
+    public boolean isResearcherAllocated(Researcher researcher) {
         // TODO implement here
-        return null;
+        return false;
     }
 
     /**
@@ -101,7 +61,7 @@ public class Article {
      */
     public void allocateReviewer(Researcher reviewer) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -111,7 +71,7 @@ public class Article {
      */
     public void setGrade(Researcher reviewer, float grade) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

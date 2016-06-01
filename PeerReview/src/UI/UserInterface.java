@@ -10,6 +10,8 @@ import java.util.*;
  */
 public class UserInterface {
 
+    public Service service;
+
     /**
      * Default constructor
      */
@@ -17,19 +19,12 @@ public class UserInterface {
     }
 
     /**
-     * 
-     */
-    public Service service;
-
-
-
-    /**
      * @param service 
      * @return
      */
     public void UserInterface(Service service) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -37,16 +32,16 @@ public class UserInterface {
      */
     public void getCommand() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
      * @param message 
      * @return
      */
-    public void showMessage(string message) {
+    public void showMessage(String message) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -78,7 +73,7 @@ public class UserInterface {
      */
     public void showUI() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -86,7 +81,7 @@ public class UserInterface {
      */
     public void showArticlesList() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -95,7 +90,7 @@ public class UserInterface {
      */
     public void showArticleReviewersList(Article article) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -103,16 +98,16 @@ public class UserInterface {
      */
     public void showConferences() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
      * @param articlesList 
      * @return
      */
-    public void showArticlesWithGrades(arrayList<Article> articlesList) {
+    public void showArticlesWithGrades(ArrayList<Article> articlesList) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

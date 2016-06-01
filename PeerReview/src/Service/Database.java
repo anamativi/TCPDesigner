@@ -1,6 +1,5 @@
 package Service;
 
-
 import RLObjects.ResearchTopic;
 import RLObjects.University;
 import RLObjects.Researcher;
@@ -8,10 +7,13 @@ import RLObjects.Conference;
 import RLObjects.Article;
 import java.util.*;
 
-/**
- * 
- */
 public class Database {
+
+    public ArrayList<Researcher> researchers;
+    public ArrayList<Conference> conferences;
+    public ArrayList<Article> articles;
+    public ArrayList<University> universities;
+    public ArrayList<ResearchTopic> reasearchTopics;
 
     /**
      * Default constructor
@@ -20,43 +22,17 @@ public class Database {
     }
 
     /**
-     * 
-     */
-    public arrayList<Researcher> researchers;
-
-    /**
-     * 
-     */
-    public arrayList<Conference> conferences;
-
-    /**
-     * 
-     */
-    public arrayList<Article> articles;
-
-    /**
-     * 
-     */
-    public arrayList<University> universities;
-
-    /**
-     * 
-     */
-    public arrayList<ResearchTopic> reasearchTopics;
-
-
-    /**
      * @return
      */
     public void initData() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
      * @return
      */
-    public arrayList<Researcher> getResearchers() {
+    public ArrayList<Researcher> getResearchers() {
         // TODO implement here
         return null;
     }
@@ -64,7 +40,7 @@ public class Database {
     /**
      * @return
      */
-    public arrayList<Conference> getConferences() {
+    public ArrayList<Conference> getConferences() {
         // TODO implement here
         return null;
     }
@@ -72,7 +48,7 @@ public class Database {
     /**
      * @return
      */
-    public arrayList<Article> getArticles() {
+    public ArrayList<Article> getArticles() {
         // TODO implement here
         return null;
     }
@@ -80,7 +56,7 @@ public class Database {
     /**
      * @return
      */
-    public arrayList<University> getUniversities() {
+    public ArrayList<University> getUniversities() {
         // TODO implement here
         return null;
     }
@@ -88,7 +64,7 @@ public class Database {
     /**
      * @return
      */
-    public arrayList<ResearchTopic> getResearchTopics() {
+    public ArrayList<ResearchTopic> getResearchTopics() {
         // TODO implement here
         return null;
     }
@@ -99,7 +75,7 @@ public class Database {
      */
     public void addResearcher(Researcher researcher) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -108,7 +84,7 @@ public class Database {
      */
     public void addConference(Conference conference) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -117,7 +93,7 @@ public class Database {
      */
     public void addArticle(Article article) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -126,7 +102,7 @@ public class Database {
      */
     public void addUniversity(University university) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -135,7 +111,7 @@ public class Database {
      */
     public void addResearchTopic(ResearchTopic researchTopic) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

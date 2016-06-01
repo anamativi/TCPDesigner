@@ -20,7 +20,7 @@ public class RateArticleCommand extends Command {
      */
     public void execute() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**

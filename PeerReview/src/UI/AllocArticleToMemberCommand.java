@@ -20,7 +20,7 @@ public class AllocArticleToMemberCommand extends Command {
      */
     public void execute() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
