@@ -1,4 +1,4 @@
-package RLObjects;
+package Service;
 
 import Service.Database;
 import UI.UserInterface;
