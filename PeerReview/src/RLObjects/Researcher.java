@@ -36,7 +36,7 @@ public class Researcher {
      */
     public String getName() {
         // TODO implement here
-        return null;
+        return this.name;
     }
 
     /**
