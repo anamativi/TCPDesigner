@@ -28,8 +28,7 @@ public class Researcher {
      * @return
      */
     public University getUniversity() {
-        // TODO implement here
-        return null;
+        return this.affiliation;
     }
 
     /**
@@ -37,7 +36,7 @@ public class Researcher {
      */
     public String getName() {
         // TODO implement here
-        return null;
+        return this.name;
     }
 
     /**
