@@ -38,7 +38,7 @@ public class Article {
      */
     public ResearchTopic getResearchTopic() {
         // TODO implement here
-        return null;
+        return researchTopic;
     }
 
     /**
@@ -55,7 +55,7 @@ public class Article {
      */
     public int getID() {
         // TODO implement here
-        return 0;
+        return id;
     }
 
     /**
@@ -63,7 +63,11 @@ public class Article {
      */
     public int numberOfReviewers() {
         // TODO implement here
-        return 0;
+        int nrReviewers = 1;
+        for(int i=0;i<reviewers.size();i++){
+            nrReviewers++;
+        }
+        return nrReviewers;
     }
 
     /**

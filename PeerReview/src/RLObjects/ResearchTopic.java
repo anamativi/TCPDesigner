@@ -4,14 +4,12 @@ import java.util.*;
 
 public class ResearchTopic {
     
-    private String name;
+    public String name;
     
     /**
      * Default constructor
      */
-    public ResearchTopic() {
-    }
-    
+
     public ResearchTopic(String name) {
         this.name = name;
     }
