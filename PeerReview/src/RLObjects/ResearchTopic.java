@@ -11,6 +11,10 @@ public class ResearchTopic {
      */
     public ResearchTopic() {
     }
+    
+    public ResearchTopic(String name) {
+        this.name = name;
+    }
 
 
 

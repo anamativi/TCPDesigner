@@ -9,21 +9,25 @@ public class Conference {
     public ArrayList<Article> articlesSubmitted;
     public ArrayList<Article> articlesAllocated;
     public ArrayList<Researcher> committeeMembers;
-    public Researcher coordinator;
+    //public Researcher coordinator; //Why do this even exists? It shalt be deleted
     
     /**
      * Default constructor
      */
     public Conference() {
     }
+    
+    public Conference(String initials, ArrayList<Researcher> committeMembers) {
+        this.initials = initials;
+        this.committeeMembers = committeeMembers;
+        this.articlesAllocated = new ArrayList<>();
+        this.articlesSubmitted = new ArrayList<>();
+    }
 
     /**
      * @return
      */
     public int getLowestSubmittedArticleID() {
-        private Conference conference;
-        private ArrayList<Article> articles = conference.getArticles();
-        
         return 0;
     }
 

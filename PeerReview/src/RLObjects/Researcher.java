@@ -15,6 +15,14 @@ public class Researcher {
      */
     public Researcher() {
     }
+    
+    public Researcher(int id, String name, University affiliation, ArrayList<ResearchTopic> researchTopic) {
+        this.id = id;
+        this.name = name;
+        this.affiliation = affiliation;
+        this.researchTopic = researchTopic;
+        this.allocatedArticles = new ArrayList<>();
+    }
 
 
     public ArrayList<ResearchTopic> getResearchTopics() {

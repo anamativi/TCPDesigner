@@ -9,9 +9,20 @@ public class Article {
     public ArrayList<Researcher> reviewers;
     public Conference conference;
     public ResearchTopic researchTopic;
-    public Map<Researcher,float> grades;    //This needs to have an object from some kind to reference to. Probably solved by creating Grade Class.
+    public HashMap<Researcher,Grade> grades;
     
     public Article() {
+    }
+    
+    public Article(int id, String title, Researcher author, Conference conference, ResearchTopic researchTopic) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.conference = conference;
+        this.researchTopic = researchTopic;
+        
+        this.reviewers = new ArrayList<>();
+        this.grades = new HashMap<>();
     }
     
     /**
