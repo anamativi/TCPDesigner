@@ -27,7 +27,8 @@ public class Conference {
     /**
      * @return
      */
-    public int getLowestSubmittedArticleID() {
+    public int getLowestSubmittedArticleID(Database db) { //Database has to come from somewhere, dont it?
+        ArrayList<Article> articles = db.getArticles();
         return 0;
     }
 
