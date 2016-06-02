@@ -14,7 +14,9 @@ public class Database {
     public ArrayList<Article> articles;
     public ArrayList<University> universities;
     public ArrayList<ResearchTopic> reasearchTopics;
-
+    
+    private static Database db = new Database();
+    
     /**
      * Default constructor
      */
@@ -22,6 +24,10 @@ public class Database {
         this.initData();
     }
 
+    public static Database getInstance(){
+        return db;
+    }
+    
     /**
      */
     public final void initData() {
