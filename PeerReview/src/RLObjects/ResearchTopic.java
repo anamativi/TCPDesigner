@@ -18,8 +18,7 @@ public class ResearchTopic {
      * @return
      */
     public String getName() {
-        // TODO implement here
-        return null;
+        return name;
     }
 
     /**
@@ -27,8 +26,7 @@ public class ResearchTopic {
      * @return
      */
     public void setName(String name) {
-        // TODO implement here
-        //return null;
+        this.name = name;
     }
 
 }
