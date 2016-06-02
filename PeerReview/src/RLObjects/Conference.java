@@ -23,7 +23,6 @@ public class Conference {
     public int getLowestSubmittedArticleID() {
         private Conference conference;
         private ArrayList<Article> articles = conference.getArticles();
-        //nao faz rebase
         
         return 0;
     }
