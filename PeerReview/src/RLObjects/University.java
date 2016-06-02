@@ -9,7 +9,8 @@ public class University {
     /**
      * Default constructor
      */
-    public University() {
+    public University(String name) {
+        this.name=name;
     }
 
     /**
@@ -17,7 +18,7 @@ public class University {
      */
     public String getName() {
         // TODO implement here
-        return null;
+        return name;
     }
 
 }
