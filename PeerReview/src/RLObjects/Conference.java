@@ -5,10 +5,10 @@ import Service.Database;
 
 public class Conference {
     
-    public String initials;
-    public ArrayList<Article> articlesSubmitted;
-    public ArrayList<Article> articlesAllocated;
-    public ArrayList<Researcher> committeeMembers;
+    private String initials;
+    private ArrayList<Article> articlesSubmitted;
+    private ArrayList<Article> articlesAllocated;
+    private ArrayList<Researcher> committeeMembers;
     //public Researcher coordinator; //Why do this even exists? It shalt be deleted
     
     /**

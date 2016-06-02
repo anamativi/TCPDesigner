@@ -6,8 +6,8 @@ import java.util.*;
 
 public class PeerReview {
     
-    public UserInterface ui;
-    public Database db;
+    private UserInterface ui;
+    private Database db;
     
     /**
      * Default constructor

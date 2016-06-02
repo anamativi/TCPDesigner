@@ -4,7 +4,7 @@ import java.util.*;
 
 public class University {
     
-    public String name;
+    private String name;
     
     /**
      * Default constructor

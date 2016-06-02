@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ResearchTopic {
     
-    public String name;
+    private String name;
     
     /**
      * Default constructor

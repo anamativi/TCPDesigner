@@ -3,13 +3,13 @@ import java.util.*;
 
 public class Article {
     
-    public int id;
-    public String title;
-    public Researcher author;
-    public ArrayList<Researcher> reviewers;
-    public Conference conference;
-    public ResearchTopic researchTopic;
-    public HashMap<Researcher,Grade> grades;
+    private int id;
+    private String title;
+    private Researcher author;
+    private ArrayList<Researcher> reviewers;
+    private Conference conference;
+    private ResearchTopic researchTopic;
+    private HashMap<Researcher,Grade> grades;
     
     public Article() {
     }
