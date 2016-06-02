@@ -1,6 +1,5 @@
 package Service;
 
-
 import RLObjects.ResearchTopic;
 import RLObjects.University;
 import RLObjects.Researcher;
@@ -8,10 +7,13 @@ import RLObjects.Conference;
 import RLObjects.Article;
 import java.util.*;
 
-/**
- * 
- */
 public class Database {
+
+    public ArrayList<Researcher> researchers;
+    public ArrayList<Conference> conferences;
+    public ArrayList<Article> articles;
+    public ArrayList<University> universities;
+    public ArrayList<ResearchTopic> reasearchTopics;
 
     /**
      * Default constructor
@@ -20,77 +22,46 @@ public class Database {
     }
 
     /**
-     * 
-     */
-    public arrayList<Researcher> researchers;
-
-    /**
-     * 
-     */
-    public arrayList<Conference> conferences;
-
-    /**
-     * 
-     */
-    public arrayList<Article> articles;
-
-    /**
-     * 
-     */
-    public arrayList<University> universities;
-
-    /**
-     * 
-     */
-    public arrayList<ResearchTopic> reasearchTopics;
-
-
-    /**
      * @return
      */
     public void initData() {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
      * @return
      */
-    public arrayList<Researcher> getResearchers() {
-        // TODO implement here
-        return null;
+    public ArrayList<Researcher> getResearchers() {
+        return this.researchers;
     }
 
     /**
      * @return
      */
-    public arrayList<Conference> getConferences() {
-        // TODO implement here
-        return null;
+    public ArrayList<Conference> getConferences() {
+        return this.conferences;
     }
 
     /**
      * @return
      */
-    public arrayList<Article> getArticles() {
-        // TODO implement here
-        return null;
+    public ArrayList<Article> getArticles() {
+        return this.articles;
     }
 
     /**
      * @return
      */
-    public arrayList<University> getUniversities() {
-        // TODO implement here
-        return null;
+    public ArrayList<University> getUniversities() {
+        return this.universities;
     }
 
     /**
      * @return
      */
-    public arrayList<ResearchTopic> getResearchTopics() {
-        // TODO implement here
-        return null;
+    public ArrayList<ResearchTopic> getResearchTopics() {
+        return this.reasearchTopics;
     }
 
     /**
@@ -99,7 +70,7 @@ public class Database {
      */
     public void addResearcher(Researcher researcher) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -108,7 +79,7 @@ public class Database {
      */
     public void addConference(Conference conference) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -117,7 +88,7 @@ public class Database {
      */
     public void addArticle(Article article) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -126,7 +97,7 @@ public class Database {
      */
     public void addUniversity(University university) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**
@@ -135,7 +106,7 @@ public class Database {
      */
     public void addResearchTopic(ResearchTopic researchTopic) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

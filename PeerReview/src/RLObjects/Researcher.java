@@ -1,13 +1,15 @@
 package RLObjects;
 
-
 import java.util.*;
 
-/**
- * 
- */
 public class Researcher {
 
+    public int id;
+    public String name;
+    public University affiliation;
+    public ArrayList<ResearchTopic> researchTopic;
+    public ArrayList<Article> allocatedArticles;
+    
     /**
      * Default constructor
      */
@@ -15,35 +17,9 @@ public class Researcher {
     }
 
     /**
-     * 
-     */
-    public int id;
-
-    /**
-     * 
-     */
-    public string name;
-
-    /**
-     * 
-     */
-    public University affiliation;
-
-    /**
-     * 
-     */
-    public arrayList<ResearchTopic> researchTopic;
-
-    /**
-     * 
-     */
-    public arrayList<Article> allocatedArticles;
-
-
-    /**
      * @return
      */
-    public arrayList<ResearchTopic> getResearchTopics() {
+    public ArrayList<ResearchTopic> getResearchTopics() {
         // TODO implement here
         return null;
     }
@@ -59,7 +35,7 @@ public class Researcher {
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
         return null;
     }
@@ -78,7 +54,7 @@ public class Researcher {
      */
     public void allocateArticle(Article article) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

@@ -1,28 +1,23 @@
 package RLObjects;
 
-
 import java.util.*;
 
-/**
- * 
- */
 public class ResearchTopic {
-
+    
+    public String name;
+    
     /**
      * Default constructor
      */
     public ResearchTopic() {
     }
 
-    /**
-     * 
-     */
-    public string name;
+
 
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
         return null;
     }
@@ -31,9 +26,9 @@ public class ResearchTopic {
      * @param name 
      * @return
      */
-    public void setName(string name) {
+    public void setName(String name) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
 }

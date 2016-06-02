@@ -1,15 +1,14 @@
 package Service;
 
-
 import Service.Database;
 import UI.UserInterface;
 import java.util.*;
 
-/**
- * 
- */
 public class PeerReview {
-
+    
+    public UserInterface ui;
+    public Database db;
+    
     /**
      * Default constructor
      */
@@ -17,22 +16,12 @@ public class PeerReview {
     }
 
     /**
-     * 
-     */
-    public UserInterface ui;
-
-    /**
-     * 
-     */
-    public Database db;
-
-    /**
      * @param args 
      * @return
      */
-    public void main(string args) {
-        // TODO implement here YAY
-        return null;
+    public void main(String args) {
+        // TODO implement here
+        //return null;
     }
 
 }

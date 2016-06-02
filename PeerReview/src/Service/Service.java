@@ -1,29 +1,20 @@
 package Service;
 
-
 import UI.UserInterface;
 import RLObjects.Researcher;
 import RLObjects.Conference;
 import RLObjects.Article;
 import java.util.*;
 
-/**
- * 
- */
 public class Service {
+
+    public Database db;
 
     /**
      * Default constructor
      */
     public Service() {
     }
-
-    /**
-     * 
-     */
-    public Database db;
-
-
 
     /**
      * @param db
@@ -40,7 +31,7 @@ public class Service {
      */
     public void allocArticlesToMembers(Conference conference, int numReviewers, UserInterface ui) {
         // TODO implement here
-        return null;
+        //return null;
     }
 
     /**

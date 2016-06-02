@@ -1,31 +1,24 @@
 package RLObjects;
 
-
 import java.util.*;
 
-/**
- * 
- */
 public class University {
-
+    
+    public String name;
+    
     /**
      * Default constructor
      */
-    public University() {
+    public University(String name) {
+        this.name=name;
     }
-
-    /**
-     * 
-     */
-    public string name;
-
 
     /**
      * @return
      */
-    public string getName() {
+    public String getName() {
         // TODO implement here
-        return null;
+        return name;
     }
 
 }
