@@ -26,6 +26,5 @@ public class RateArticleCommand extends Command {
     /**
      * @return
      */
-    public abstract void execute();
 
 }

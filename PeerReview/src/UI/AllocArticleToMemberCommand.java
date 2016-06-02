@@ -26,6 +26,5 @@ public class AllocArticleToMemberCommand extends Command {
     /**
      * @return
      */
-    public abstract void execute();
 
 }

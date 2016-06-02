@@ -26,6 +26,5 @@ public class SelectArticleCommand extends Command {
     /**
      * @return
      */
-    public abstract void execute();
 
 }
