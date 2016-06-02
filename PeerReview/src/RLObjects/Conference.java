@@ -21,8 +21,8 @@ public class Conference {
      * @return
      */
     public int getLowestSubmittedArticleID() {
-        private Conference conference;
-        private ArrayList<Article> articles = conference.getArticles();
+        private Database db;
+        private ArrayList<Article> articles = db.getArticles();
         
         return 0;
     }
