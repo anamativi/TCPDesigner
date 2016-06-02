@@ -28,8 +28,7 @@ public class Researcher {
      * @return
      */
     public University getUniversity() {
-        // TODO implement here
-        return null;
+        return this.affiliation;
     }
 
     /**
