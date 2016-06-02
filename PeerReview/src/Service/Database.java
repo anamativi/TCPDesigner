@@ -33,40 +33,35 @@ public class Database {
      * @return
      */
     public ArrayList<Researcher> getResearchers() {
-        // TODO implement here
-        return null;
+        return this.researchers;
     }
 
     /**
      * @return
      */
     public ArrayList<Conference> getConferences() {
-        // TODO implement here
-        return null;
+        return this.conferences;
     }
 
     /**
      * @return
      */
     public ArrayList<Article> getArticles() {
-        // TODO implement here
-        return null;
+        return this.articles;
     }
 
     /**
      * @return
      */
     public ArrayList<University> getUniversities() {
-        // TODO implement here
-        return null;
+        return this.universities;
     }
 
     /**
      * @return
      */
     public ArrayList<ResearchTopic> getResearchTopics() {
-        // TODO implement here
-        return null;
+        return this.reasearchTopics;
     }
 
     /**
