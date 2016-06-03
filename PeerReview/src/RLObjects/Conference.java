@@ -88,11 +88,6 @@ public class Conference {
         // TODO implement here
         return null;
     }
-
-     public ArrayList<Article> getAllocatedArticles(){
-        return articlesSubmitted;
-    }
-    
     
     /**
      * @return
@@ -101,5 +96,14 @@ public class Conference {
        
         return true;
     }
+    
+    public ArrayList<Article> getArticlesSubmitted() {
+        return articlesSubmitted;
+    }
+
+    public ArrayList<Article> getArticlesAllocated() {
+        return articlesAllocated;
+    }
+    
 
 }
