@@ -34,7 +34,7 @@ public class Conference {
         
         Collections.sort(articlesSubmitted);
         
-        return articlesSubmitted[0];
+        return articlesSubmitted.get(0).getID();
     }
 
     /**
