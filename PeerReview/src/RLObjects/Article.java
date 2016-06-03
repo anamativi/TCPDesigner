@@ -61,8 +61,8 @@ public class Article implements Comparable<Article>{
     }
 
     
-     public int numberOfGrades() {
-        return grades.size();
+     public boolean isGraded() {
+        return (grades.size() == numberOfReviewers());
     }
 
 
