@@ -9,9 +9,7 @@ public class ResearchTopic {
     /**
      * Default constructor
      */
-    public ResearchTopic() {
-    }
-    
+
     public ResearchTopic(String name) {
         this.name = name;
     }

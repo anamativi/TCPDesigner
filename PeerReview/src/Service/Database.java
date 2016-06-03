@@ -9,11 +9,11 @@ import java.util.*;
 
 public class Database {
 
-    public ArrayList<Researcher> researchers;
-    public ArrayList<Conference> conferences;
-    public ArrayList<Article> articles;
-    public ArrayList<University> universities;
-    public ArrayList<ResearchTopic> reasearchTopics;
+    private ArrayList<Researcher> researchers;
+    private ArrayList<Conference> conferences;
+    private ArrayList<Article> articles;
+    private ArrayList<University> universities;
+    private ArrayList<ResearchTopic> reasearchTopics;
     
     private static Database db = new Database();
     

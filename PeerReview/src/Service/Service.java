@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Service {
 
-    public Database db;
+    private Database db;
 
     /**
      * Default constructor

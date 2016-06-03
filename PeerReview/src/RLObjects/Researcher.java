@@ -4,11 +4,11 @@ import java.util.*;
 
 public class Researcher {
 
-    public int id;
-    public String name;
-    public University affiliation;
-    public ArrayList<ResearchTopic> researchTopic;
-    public ArrayList<Article> allocatedArticles;
+    private int id;
+    private String name;
+    private University affiliation;
+    private ArrayList<ResearchTopic> researchTopic;
+    private ArrayList<Article> allocatedArticles;
     
     /**
      * Default constructor
