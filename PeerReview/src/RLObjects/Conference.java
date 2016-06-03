@@ -65,33 +65,32 @@ public class Conference {
         return null;
     }
 
-    /**
-     * @return
-     */
+
     public ArrayList<Article> getAcceptedArticles() {
-        // TODO implement here
-        return null;
+        ArrayList<Article> acceptedArticles = new ArrayList<Article>();
+        for(int i=0;i<articlesAllocated.size();i++){
+            if(articlesAllocated.get(i).wasAccepted()){
+                acceptedArticles.add(articlesAllocated.get(i));
+            }
+        }
+        return acceptedArticles;
     }
 
-    /**
-     * @return
-     */
+
     public ArrayList<Article> getRejectedArticles() {
-        // TODO implement here
-        return null;
+        ArrayList<Article> rejectedArticles = new ArrayList<Article>();
+        for(int i=0;i<articlesAllocated.size();i++){
+            if(!articlesAllocated.get(i).wasAccepted()){
+                rejectedArticles.add(articlesAllocated.get(i));
+            }
+        }
+        return rejectedArticles;
     }
 
-    /**
-     * @return
-     */
-    public Researcher getCoordinator() {
-        // TODO implement here
-        return null;
-    }
     
     public boolean hasUnreviewedArticles() {
         for(int i=0;i < articlesAllocated.size();i++){
-            if(articlesAllocated.get(i).numberOfGrades() < articlesAllocated.get(i).numberOfReviewers())
+            if(articlesAllocated.get(i).isGraded())
                 return true;
         }
         return false;
