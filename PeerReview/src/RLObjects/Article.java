@@ -9,7 +9,7 @@ public class Article implements Comparable<Article>{
     private ArrayList<Researcher> reviewers;
     private Conference conference;
     private ResearchTopic researchTopic;
-    private HashMap<Researcher,Grade> grades;
+    private HashMap<Researcher,Float> grades;
     
     public Article() {
     }
@@ -70,14 +70,9 @@ public class Article implements Comparable<Article>{
         reviewers.add(reviewer);
     }
 
-    /**
-     * @param reviewer 
-     * @param grade 
-     * @return
-     */
+
     public void setGrade(Researcher reviewer, float grade) {
-        // TODO implement here
-        //return null;
+        this.grades.put(reviewer,grade);
     }
     
     public Conference getConference() {
@@ -86,6 +81,16 @@ public class Article implements Comparable<Article>{
 
     public void setConference(Conference conference) {
         this.conference = conference;
+    }
+    
+    public boolean wasAccepted(){
+        float meanGrade=0;
+        for(int i=0;i<reviewers.size();i++){
+            meanGrade = meanGrade + grades.get(reviewers.get(i));
+        }
+        meanGrade = meanGrade/reviewers.size();
+        if(meanGrade < 0) return false;
+        else return true;
     }
 
 }
