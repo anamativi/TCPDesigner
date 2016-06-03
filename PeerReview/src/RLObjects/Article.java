@@ -16,7 +16,7 @@ public class Article {
     
     public int compareTo(Article comparestu) {
         int compareID=((Article)comparestu).getID();
-        return this.articleID-compareID;
+        return this.id-compareID;
 }
     
     public Article(int id, String title, Researcher author, Conference conference, ResearchTopic researchTopic) {
