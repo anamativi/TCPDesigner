@@ -1,7 +1,7 @@
 package RLObjects;
 import java.util.*;
 
-public class Article {
+public class Article implements Comparable<Article>{
     
     private int id;
     private String title;
@@ -14,6 +14,7 @@ public class Article {
     public Article() {
     }
     
+    @Override
     public int compareTo(Article compareArticle) {
         int compareID=((Article)compareArticle).getID();
         return this.id-compareID;
