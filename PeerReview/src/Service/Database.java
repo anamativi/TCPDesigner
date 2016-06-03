@@ -136,6 +136,10 @@ public class Database {
             Article article10 = new Article(10,"Architecture Comformance",pedro,icse,softwareArchitecture);
             Article article11 = new Article(11,"Structural Testing",carlos,icse,softwareTesting);
             
+            for(Article a : this.getArticles()){
+                a.getConference().getArticlesSubmitted().add(a);
+            }
+            
             this.addUniversity(ufrgs);
             this.addUniversity(ufrj);           
             this.addUniversity(usp);    

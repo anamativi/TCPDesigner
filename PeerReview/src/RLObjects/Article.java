@@ -81,5 +81,13 @@ public class Article {
         // TODO implement here
         //return null;
     }
+    
+    public Conference getConference() {
+        return conference;
+    }
+
+    public void setConference(Conference conference) {
+        this.conference = conference;
+    }
 
 }
