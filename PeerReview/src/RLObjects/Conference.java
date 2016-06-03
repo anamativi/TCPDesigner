@@ -89,12 +89,12 @@ public class Conference {
         return null;
     }
     
-    /**
-     * @return
-     */
     public boolean hasUnreviewedArticles() {
-       
-        return true;
+        for(int i=0;i < articlesAllocated.size();i++){
+            if(articlesAllocated.get(i).numberOfGrades() < articlesAllocated.get(i).numberOfReviewers())
+                return true;
+        }
+        return false;
     }
     
     public ArrayList<Article> getArticlesSubmitted() {
@@ -104,6 +104,8 @@ public class Conference {
     public ArrayList<Article> getArticlesAllocated() {
         return articlesAllocated;
     }
+    
+    
     
 
 }
