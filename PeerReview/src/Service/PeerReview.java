@@ -19,7 +19,8 @@ public class PeerReview {
      * @param args 
      * @return
      */
-    public void main(String args) {
+    public static void main(String[] args) {
+        Database db = Database.getInstance();
         // TODO implement here
         //return null;
     }
