@@ -18,7 +18,7 @@ public class Conference {
     public Conference() {
     }
     
-    public Conference(String initials, ArrayList<Researcher> committeMembers) {
+    public Conference(String initials, ArrayList<Researcher> committeeMembers) {
         this.initials = initials;
         this.committeeMembers = committeeMembers;
         this.articlesAllocated = new ArrayList<>();
