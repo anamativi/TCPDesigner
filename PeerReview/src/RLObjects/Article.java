@@ -72,7 +72,7 @@ public class Article implements Comparable<Article>{
 
 
     public void setGrade(Researcher reviewer, float grade) {
-        this.grades.put(reviewer,grade);
+        grades.put(reviewer,grade);
     }
     
     public Conference getConference() {
