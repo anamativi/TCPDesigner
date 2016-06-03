@@ -29,11 +29,7 @@ public class Conference {
      * @return
      */
     public int getLowestSubmittedArticleID() {
-        Database db = Database.getInstance();
-        articlesSubmitted = db.getArticles();
-        
-        Collections.sort(articlesSubmitted);
-        
+        Collections.sort(this.articlesSubmitted);
         return articlesSubmitted.get(0).getID();
     }
 
