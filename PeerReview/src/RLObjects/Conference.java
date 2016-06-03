@@ -89,11 +89,16 @@ public class Conference {
         return null;
     }
 
+     public ArrayList<Article> getAllocatedArticles(){
+        return articlesSubmitted;
+    }
+    
+    
     /**
      * @return
      */
     public boolean hasUnreviewedArticles() {
-        // TODO implement here
+       
         return true;
     }
 
