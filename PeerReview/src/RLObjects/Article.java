@@ -14,8 +14,8 @@ public class Article {
     public Article() {
     }
     
-    public int compareTo(Article comparestu) {
-        int compareID=((Article)comparestu).getID();
+    public int compareTo(Article compareArticle) {
+        int compareID=((Article)compareArticle).getID();
         return this.id-compareID;
 }
     
