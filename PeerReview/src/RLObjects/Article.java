@@ -14,11 +14,9 @@ public class Article {
     public Article() {
     }
     
-    public class CompareArticleIDs implements Comparator<Article> {
-    @Override
-    public int compare(Article o1, Article o2) {
-        return o1.getID().compareTo(o2.getID());
-    }
+    public int compareTo(Article comparestu) {
+        int compareID=((Article)comparestu).getID();
+        return this.id-compareID;
 }
     
     public Article(int id, String title, Researcher author, Conference conference, ResearchTopic researchTopic) {
