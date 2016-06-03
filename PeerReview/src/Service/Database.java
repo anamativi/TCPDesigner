@@ -13,7 +13,7 @@ public class Database {
     private ArrayList<Conference> conferences;
     private ArrayList<Article> articles;
     private ArrayList<University> universities;
-    private ArrayList<ResearchTopic> reasearchTopics;
+    private ArrayList<ResearchTopic> researchTopics;
     
     private static Database db = new Database();
     
@@ -21,6 +21,11 @@ public class Database {
      * Default constructor
      */
     public Database() {
+        this.researchers = new ArrayList<>();
+        this.conferences = new ArrayList<>();
+        this.articles = new ArrayList<>();
+        this.universities = new ArrayList<>();
+        this.researchTopics = new ArrayList<>();        
         this.initData();
     }
 
@@ -136,7 +141,7 @@ public class Database {
             Article article10 = new Article(10,"Architecture Comformance",pedro,icse,softwareArchitecture);
             Article article11 = new Article(11,"Structural Testing",carlos,icse,softwareTesting);
             
-            for(Article a : this.getArticles()){
+            for(Article a : this.articles){
                 a.getConference().getArticlesSubmitted().add(a);
             }
             
@@ -212,7 +217,7 @@ public class Database {
      * @return
      */
     public ArrayList<ResearchTopic> getResearchTopics() {
-        return this.reasearchTopics;
+        return this.researchTopics;
     }
 
     /**
@@ -249,7 +254,7 @@ public class Database {
      * @param researchTopic
      */
     public void addResearchTopic(ResearchTopic researchTopic) {
-        this.reasearchTopics.add(researchTopic);
+        this.researchTopics.add(researchTopic);
     }
 
 }
