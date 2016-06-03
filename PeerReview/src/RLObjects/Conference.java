@@ -1,4 +1,5 @@
 package RLObjects;
+import java.util.*;
 
 import java.util.*;
 import Service.Database;
@@ -31,11 +32,9 @@ public class Conference {
         Database db = Database.getInstance();
         articlesSubmitted = db.getArticles();
         
-        while (!articlesSubmitted.isEmpty()) {
-            
-            articlesSubmitted.remove(0);
-        }
-        return 0;
+        Collections.sort(articlesSubmitted);
+        
+        return articlesSubmitted[0];
     }
 
     /**
