@@ -56,16 +56,13 @@ public class Article implements Comparable<Article>{
         return this.id;
     }
 
-    /**
-     * @return
-     */
     public int numberOfReviewers() {
-        // TODO implement here
-        int nrReviewers = 1;
-        for(int i=0;i<reviewers.size();i++){
-            nrReviewers++;
+        return reviewers.size();
     }
-        return nrReviewers;
+
+    
+     public int numberOfGrades() {
+        return grades.size();
     }
 
 
