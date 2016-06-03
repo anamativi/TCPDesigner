@@ -30,37 +30,29 @@ public class Article {
         this.grades = new HashMap<>();
     }
     
-    /**
-     * @return
-     */
+
     public University getAuthorUniversity() {
-        // TODO implement here
-        return null;
+        return author.getUniversity();
     }
 
-    /**
-     * @return
-     */
+ 
     public ResearchTopic getResearchTopic() {
-        // TODO implement here
         return researchTopic;
     }
 
-    /**
-     * @param researcher 
-     * @return
-     */
+
     public boolean isResearcherAllocated(Researcher researcher) {
-        // TODO implement here
+        for(int i=0;i<reviewers.size();i++){
+            if(reviewers.get(i).getID() == researcher.getID()){
+                return true;
+            }
+        }
         return false;
     }
 
-    /**
-     * @return
-     */
+ 
     public int getID() {
-        // TODO implement here
-        return id;
+        return this.id;
     }
 
     /**
@@ -75,13 +67,9 @@ public class Article {
         return nrReviewers;
     }
 
-    /**
-     * @param reviewer 
-     * @return
-     */
+
     public void allocateReviewer(Researcher reviewer) {
-        // TODO implement here
-        //return null;
+        reviewers.add(reviewer);
     }
 
     /**
