@@ -27,9 +27,14 @@ public class Conference {
     /**
      * @return
      */
-    public int getLowestSubmittedArticleID() { //Database has to come from somewhere, dont it?
+    public int getLowestSubmittedArticleID() {
         Database db = Database.getInstance();
-        ArrayList<Article> articles = db.getArticles();
+        articlesSubmitted = db.getArticles();
+        
+        while (!articlesSubmitted.isEmpty()) {
+            
+            articlesSubmitted.remove(0);
+        }
         return 0;
     }
 

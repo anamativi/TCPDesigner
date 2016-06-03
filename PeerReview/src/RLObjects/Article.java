@@ -3,16 +3,23 @@ import java.util.*;
 
 public class Article {
     
-    public int id;
-    public String title;
-    public Researcher author;
-    public ArrayList<Researcher> reviewers;
-    public Conference conference;
-    public ResearchTopic researchTopic;
-    public HashMap<Researcher,Grade> grades;
+    private int id;
+    private String title;
+    private Researcher author;
+    private ArrayList<Researcher> reviewers;
+    private Conference conference;
+    private ResearchTopic researchTopic;
+    private HashMap<Researcher,Grade> grades;
     
     public Article() {
     }
+    
+    public class CompareArticleIDs implements Comparator<Article> {
+    @Override
+    public int compare(Article o1, Article o2) {
+        return o1.getID().compareTo(o2.getID());
+    }
+}
     
     public Article(int id, String title, Researcher author, Conference conference, ResearchTopic researchTopic) {
         this.id = id;
@@ -38,7 +45,7 @@ public class Article {
      */
     public ResearchTopic getResearchTopic() {
         // TODO implement here
-        return null;
+        return researchTopic;
     }
 
     /**
@@ -55,7 +62,7 @@ public class Article {
      */
     public int getID() {
         // TODO implement here
-        return 0;
+        return id;
     }
 
     /**
@@ -63,7 +70,11 @@ public class Article {
      */
     public int numberOfReviewers() {
         // TODO implement here
-        return 0;
+        int nrReviewers = 1;
+        for(int i=0;i<reviewers.size();i++){
+            nrReviewers++;
+    }
+        return nrReviewers;
     }
 
     /**
