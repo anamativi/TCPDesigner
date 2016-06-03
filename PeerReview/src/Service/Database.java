@@ -141,10 +141,6 @@ public class Database {
             Article article10 = new Article(10,"Architecture Comformance",pedro,icse,softwareArchitecture);
             Article article11 = new Article(11,"Structural Testing",carlos,icse,softwareTesting);
             
-            for(Article a : this.articles){
-                a.getConference().getArticlesSubmitted().add(a);
-            }
-            
             this.addUniversity(ufrgs);
             this.addUniversity(ufrj);           
             this.addUniversity(usp);    
@@ -183,6 +179,10 @@ public class Database {
             this.addArticle(article9);
             this.addArticle(article10);
             this.addArticle(article11);
+            
+            for(Article a : this.articles){
+                a.getConference().getArticlesSubmitted().add(a);
+            }
     }
 
     /**
