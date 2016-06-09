@@ -33,7 +33,7 @@ public class Article implements Comparable<Article>{
     }
     
 
-    public University getAuthorUniversity() {
+    public String getAuthorUniversity() {
         return author.getUniversity();
     }
 
