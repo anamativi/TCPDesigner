@@ -6,7 +6,7 @@ public class Researcher {
 
     private int id;
     private String name;
-    private University affiliation;
+    private String affiliation;
     private ArrayList<ResearchTopic> researchTopic;
     private ArrayList<Article> allocatedArticles;
     
@@ -16,7 +16,7 @@ public class Researcher {
     public Researcher() {
     }
     
-    public Researcher(int id, String name, University affiliation, ArrayList<ResearchTopic> researchTopic) {
+    public Researcher(int id, String name, String affiliation, ArrayList<ResearchTopic> researchTopic) {
         this.id = id;
         this.name = name;
         this.affiliation = affiliation;
@@ -30,7 +30,7 @@ public class Researcher {
     }
 
  
-    public University getUniversity() {
+    public String getUniversity() {
         
         //teste commit
         return this.affiliation;
