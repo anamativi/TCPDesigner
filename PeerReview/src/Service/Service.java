@@ -8,19 +8,10 @@ import java.util.*;
 
 public class Service {
 
-    private Database db;
-
-    /**
-     * Default constructor
-     */
     public Service() {
     }
 
-    /**
-     * @param db
-     */
-    public void Service(Database db) {
-        // TODO implement here
+    public void Service() {
     }
 
     /**
@@ -41,7 +32,7 @@ public class Service {
      * @param ui
      */
     public void rateArticle(Article article, Researcher reviewer, float rate, UserInterface ui) {
-        // TODO implement here
+        // TODO implement here                                                    
     }
 
     /**
