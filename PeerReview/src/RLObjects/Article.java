@@ -10,7 +10,7 @@ public class Article implements Comparable<Article>{
     private Conference conference;
     private ResearchTopic researchTopic;
     private HashMap<Researcher,Float> grades;
-    private final float MIN_ACCEPTED_GRADE=0;
+    private final static float MIN_ACCEPTED_GRADE=0;
     
     public Article() {
     }
@@ -84,19 +84,14 @@ public class Article implements Comparable<Article>{
         this.conference = conference;
     }
     
+  
     public boolean wasAccepted(){
-
-        if(meanGrade() < MIN_ACCEPTED_GRADE) return false;
-        else return true;
-    }
-    
-    private float meanGrade(){
         float meanGrade=0;
         for(int i=0;i<reviewers.size();i++){
             meanGrade = meanGrade + grades.get(reviewers.get(i));
         }
         meanGrade = meanGrade/reviewers.size();
-        return meanGrade;
+        return meanGrade >= MIN_ACCEPTED_GRADE;
     }
 
 }
