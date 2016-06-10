@@ -34,9 +34,14 @@ public class Conference {
      */
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
         ArrayList<Researcher> candidateReviewers = new ArrayList<>();
+        
+        
+        
         for(int i = 0; i < committeeMembers.size(); i = i+1) {
+            ArrayList<ResearchTopic> researchTopicsOfCommiteeMember = this.committeeMembers.get(i).getResearchTopics();
+            
             if (!(article.getAuthor().equals(this.committeeMembers.get(i)))){
-                if (this.committeeMembers.get(i).getResearchTopics().contains(article.getResearchTopic())){
+                if (researchTopicsOfCommiteeMember.contains(article.getResearchTopic())){
                     if (!(article.getReviewers().contains(this.committeeMembers.get(i)))){
                         candidateReviewers.add(this.committeeMembers.get(i));
                     }
