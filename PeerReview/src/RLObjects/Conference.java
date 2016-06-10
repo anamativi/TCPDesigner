@@ -33,7 +33,7 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
-        ArrayList<Researcher> candidateReviewers = null;
+        ArrayList<Researcher> candidateReviewers = new ArrayList<>();
         for(int i = 0; i < committeeMembers.size(); i = i+1) {
             if (!(article.getAuthor().equals(this.committeeMembers.get(i)))){
                 if (this.committeeMembers.get(i).getResearchTopics().contains(article.getResearchTopic())){
