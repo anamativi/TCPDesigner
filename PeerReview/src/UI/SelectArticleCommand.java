@@ -24,7 +24,7 @@ public class SelectArticleCommand extends Command {
         uInterface.showConferences();
         String conferenceName = uInterface.readConference();
         
-         try{
+        try{
             conference = service.readConference(conferenceName);
         }catch(notFoundInDatabase e){
             System.out.println(e.toString());

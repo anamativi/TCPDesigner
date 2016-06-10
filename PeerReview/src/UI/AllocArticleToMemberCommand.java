@@ -24,8 +24,6 @@ public class AllocArticleToMemberCommand extends Command {
         try{
             nReviewers = uInterface.readNumberOfReviewers();
             conference = service.readConference(conferenceName);
-        }catch(InvalidNumberOfReviewersException e){
-            System.out.println(e.toString());
         }catch(notFoundInDatabase e){
             System.out.println(e.toString());
         }
