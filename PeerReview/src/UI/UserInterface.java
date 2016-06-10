@@ -124,7 +124,7 @@ public class UserInterface {
 
     public void showArticlesWithGrades(ArrayList<Article> articlesList) {
         for(Article article : articlesList){
-            System.out.println("ID: " + article.getID() + " Article: " + article.getTitle() + "\nAuthor: " + article.getAuthor().getName() + "\nGrade: " + article.getMeanGrade());
+            System.out.println("ID: " + article.getID() + " Article: " + article.getTitle() + "\nAuthor: " + article.getAuthor().getName() + "\nGrade: " + article.meanGrade());
         }
     }
 
