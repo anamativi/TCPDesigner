@@ -1,7 +1,6 @@
 package Service;
 
 import RLObjects.ResearchTopic;
-import RLObjects.University;
 import RLObjects.Researcher;
 import RLObjects.Conference;
 import RLObjects.Article;
@@ -206,7 +205,7 @@ public class Database {
     /**
      * @return
      */
-    public ArrayList<University> getUniversities() {
+    public ArrayList<String> getUniversities() {
         return this.universities;
     }
 
