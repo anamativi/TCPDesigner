@@ -33,7 +33,13 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
-        // TODO implement here
+        if (!(article.getAuthor().equals(this.committeeMembers.get(0)))){
+            if (this.committeeMembers.get(0).getResearchTopics().contains(article.getResearchTopic())){
+                if (!(article.getReviewers().contains(this.committeeMembers.get(0)))){
+                    //keep going --> ordena candidatos
+                }
+            }
+    }
         return null;
     }
 
@@ -42,8 +48,8 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> sortReviewers(ArrayList<Researcher> researchCandidatesList) {
-        // TODO implement here
-        return null;
+        Collections.sort(researchCandidatesList);
+        return researchCandidatesList;
     }
 
 
