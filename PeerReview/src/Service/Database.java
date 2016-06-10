@@ -256,6 +256,31 @@ public class Database {
     
  
     
+
+    public Conference readConference(String conferenceInitials) throws notFoundInDatabase{
+        for(int i=0;i<conferences.size();i++){
+            if(conferences.get(i).getInitials().equals(conferenceInitials))
+                return conferences.get(i);
+        }
+        throw new notFoundInDatabase("Conference not found.");
+    }
+
+
+    public Article readArticle(int ID) throws notFoundInDatabase{
+        for(int i=0;i<articles.size();i++){
+            if(articles.get(i).getID() == ID)
+                return articles.get(i);
+        }
+        throw new notFoundInDatabase("Article not found.");
+    }
+
+    public Researcher readResearcher(int ID) throws notFoundInDatabase{
+        for(int i=0;i<researchers.size();i++){
+            if(researchers.get(i).getID() == ID)
+                return researchers.get(i);
+        }
+        throw new notFoundInDatabase("Researcher not found.");
+    }
     
 
 }
