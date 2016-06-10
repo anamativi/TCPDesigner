@@ -18,7 +18,7 @@ public class Service {
     public void allocArticlesToMembers(Conference conference, int numReviews, UserInterface ui) {
     
         try{
-            readConference(conference);
+            readConference(conference.getInitials());
         }catch(notFoundInDatabase e){
         System.out.println(e.toString());
         }
@@ -52,11 +52,11 @@ public class Service {
     }
 
 
-    public Conference readConference(Conference conference) throws notFoundInDatabase{
+    public Conference readConference(String conferenceInitials) throws notFoundInDatabase{
         Database db = Database.getInstance();
         ArrayList<Conference> conferences = db.getConferences();
         for(int i=0;i<conferences.size();i++){
-            if(conferences.get(i).getInitials().equals(conference.getInitials()))
+            if(conferences.get(i).getInitials().equals(conferenceInitials))
                 return conferences.get(i);
         }
         throw new notFoundInDatabase("Conference not found.");
