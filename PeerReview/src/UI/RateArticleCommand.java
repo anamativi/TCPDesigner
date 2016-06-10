@@ -19,35 +19,20 @@ public class RateArticleCommand extends Command {
     public void execute() {
         UserInterface uInterface = new UserInterface();
         Service service = new Service();
-        Article article = null;
-        Researcher reviewer=null;
-        int articleID = 0, researcherID = 0;
-        float grade=0;
-        
+  
         uInterface.showArticlesList();
-        try{
-           articleID = uInterface.readNumberOfReviewers(); 
-           article = service.readArticle(articleID);
-        }catch(notFoundInDatabase e){
-            System.out.println(e.toString());
-        }
+        int articleID = uInterface.readNumberOfReviewers(); 
+        Article article = service.readArticle(articleID);
+  
         
         
         uInterface.showArticleReviewersList(article);
-        try{
-           researcherID = uInterface.readNumberOfReviewers(); 
-           reviewer = service.readResearcher(researcherID);
-        }catch(notFoundInDatabase e){
-            System.out.println(e.toString());
-        }
+        int researcherID = uInterface.readNumberOfReviewers(); 
+        Researcher reviewer = service.readResearcher(researcherID);
        
-        try{
-            grade = uInterface.readGrade(); 
-        }catch(InvalidGradeException e){
-            System.out.println(e.toString());
-        }
-        
- 
+
+        float grade = uInterface.readGrade(); 
+
         service.rateArticle(article, reviewer, grade, uInterface);
         
     }
