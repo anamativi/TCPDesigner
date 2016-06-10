@@ -13,7 +13,6 @@ public class PeerReview {
     }
 
     public static void main(String[] args) {
-        Database db = Database.getInstance();
         UserInterface programInterface = new UserInterface();
         programInterface.showUI();
         programInterface.getCommand();

@@ -23,9 +23,11 @@ public class Service {
         System.out.println(e.toString());
         }
         ui.showMessage("Iniciando alocação");
-        
+
         for(int reviewTimes=1;reviewTimes <= numReviews;reviewTimes++){
+            System.out.println("LOOP FOR.");
             while(conference.hasArticlesNotAllocated()){
+                System.out.println("LOOP while.");
                 Article lowestID = conference.getLowestIDSubmittedArticle();
                 ArrayList<Researcher> eligibleReviewerList = conference.getCandidateReviewers(lowestID);
                 eligibleReviewerList = conference.sortReviewers(eligibleReviewerList);
@@ -44,9 +46,13 @@ public class Service {
 
 
     public void selectArticle(Conference conference, UserInterface ui) {
-        if(conference.hasUnreviewedArticles()) ui.showMessage("Alerta: Há artigos que não foram revisados.");
+        if(conference.hasUnreviewedArticles()) ui.showMessage("Warning: There are unrated articles.");
         else{
+            if(!conference.getAcceptedArticles().isEmpty())
+            System.out.println("Accepted Articles:");
             ui.showArticlesWithGrades(conference.getAcceptedArticles());
+            if(!conference.getRejectedArticles().isEmpty())
+            System.out.println("Rejected Articles:");
             ui.showArticlesWithGrades(conference.getRejectedArticles());
         }
     }

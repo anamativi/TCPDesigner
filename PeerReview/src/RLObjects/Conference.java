@@ -87,10 +87,9 @@ public class Conference {
 
     
     public boolean hasUnreviewedArticles() {
-        for(int i=0;i < articlesAllocated.size();i++){
-            if(articlesAllocated.get(i).isGraded())
+            if(articlesAllocated.size() < 0)
                 return true;
-        }
+        
         return false;
     }
     

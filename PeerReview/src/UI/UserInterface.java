@@ -42,14 +42,17 @@ public class UserInterface {
                 case 1:
                     AllocArticleToMemberCommand allocCommand = new AllocArticleToMemberCommand();
                     allocCommand.execute();
+                    showUI();
                     break;
                 case 2:
                     RateArticleCommand rateCommand = new RateArticleCommand();
                     rateCommand.execute();
+                    showUI();
                     break;
                 case 3:
                     SelectArticleCommand selectArticleCommand = new SelectArticleCommand();
                     selectArticleCommand.execute();
+                    showUI();
                     break;
                 default:
                     break;
@@ -202,6 +205,16 @@ public class UserInterface {
         System.out.println("Conferences:");
         for(Conference conf : conferences){
             if((conf.getArticlesAllocated().isEmpty()))
+                System.out.println(conf.getInitials());
+        }
+    }
+    
+    public void showAllocatedConferences() {
+        Database db = Database.getInstance();
+        ArrayList<Conference> conferences = db.getConferences();
+        System.out.println("Conferences:");
+        for(Conference conf : conferences){
+            if(!(conf.getArticlesAllocated().isEmpty()))
                 System.out.println(conf.getInitials());
         }
     }

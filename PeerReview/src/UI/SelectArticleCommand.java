@@ -20,7 +20,7 @@ public class SelectArticleCommand extends Command {
     public void execute() {
         Service service = new Service();
         UserInterface uInterface = new UserInterface();
-        uInterface.showConferences();
+        uInterface.showAllocatedConferences();
         Conference conference = uInterface.readConference();
          
         service.selectArticle(conference, uInterface);
