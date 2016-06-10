@@ -104,12 +104,27 @@ public class UserInterface {
     }
 
     public void showArticlesList() {
-
+        Database db = Database.getInstance();
+        ArrayList<Article> articles = db.getArticles();
+        System.out.println("Unrated articles:");
+        for(Article artic : articles){
+            if(artic.isGraded()){
+                System.out.println("ID: " + artic.getID() + " Article title: " + artic.getTitle());
+            }
+        }
     }
 
     public void showArticleReviewersList(Article article) {
-        // TODO implement here
-        //return null;
+        if (article.getReviewers().isEmpty()){
+            System.out.println("There is no reviewers assigned for this article.");
+        }
+        else{
+            System.out.println("Reviewers of " + article.getTitle() + ":");
+            for(Researcher reviewer : article.getReviewers()){
+                System.out.println(reviewer.getName());
+            }            
+        }
+
     }
 
     public void showConferences() {
