@@ -33,14 +33,17 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
-        if (!(article.getAuthor().equals(this.committeeMembers.get(0)))){
-            if (this.committeeMembers.get(0).getResearchTopics().contains(article.getResearchTopic())){
-                if (!(article.getReviewers().contains(this.committeeMembers.get(0)))){
-                    //keep going --> ordena candidatos
+        ArrayList<Researcher> candidateReviewers = null;
+        for(int i = 0; i < committeeMembers.size(); i = i+1) {
+            if (!(article.getAuthor().equals(this.committeeMembers.get(i)))){
+                if (this.committeeMembers.get(i).getResearchTopics().contains(article.getResearchTopic())){
+                    if (!(article.getReviewers().contains(this.committeeMembers.get(i)))){
+                        candidateReviewers.add(this.committeeMembers.get(i));
+                    }
                 }
             }
-    }
-        return null;
+        }
+        return candidateReviewers;
     }
 
     /**
