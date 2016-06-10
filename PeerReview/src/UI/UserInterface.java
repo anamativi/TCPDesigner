@@ -6,6 +6,8 @@ import RLObjects.*;
 import Service.Database;
 import java.util.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class UserInterface {
@@ -15,7 +17,7 @@ public class UserInterface {
     private final static float MAX_GRADE=3;
     private final static float MIN_NUMREVIEWERS=3;
     private final static float MAX_NUMREVIEWERS=5;
-    private final static float NUMBER_OF_OPTIONS=3;
+    private final static int NUMBER_OF_OPTIONS=3;
 
     public UserInterface() {
     }
@@ -27,7 +29,7 @@ public class UserInterface {
 
     public void getCommand() {
         
-        int loop = 1;
+        int loop = NUMBER_OF_OPTIONS+1;
         while(loop != 0){
             try{
             loop = new Scanner(System.in).nextInt();
@@ -37,7 +39,7 @@ public class UserInterface {
                 System.out.println("Incorrect input type, must be integer. Enter Again.");
             }
             catch(NotMenuOptionException e){
-                System.out.println("The chouse input must be btween 0 and " + NUMBER_OF_OPTIONS);
+                System.out.println("The chouse input must be between 0 and " + NUMBER_OF_OPTIONS);
             }
             switch (loop) {
                 case 1:
@@ -68,19 +70,20 @@ public class UserInterface {
         return scanner.nextLine();
     }
 
-    public int readInteger() throws InvalidNumberOfReviewersException {
+    public int readInteger() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number of reviewers:");
         int readValue;
         try{
             readValue = scanner.nextInt();
-            boolean test = (readValue <= MAX_NUMREVIEWERS && readValue >=MIN_NUMREVIEWERS);
-            if(!test){
-                throw new InvalidNumberOfReviewersException();
-            }
+            isValidReadNumberOfReviewers(readValue);
         }
         catch(InputMismatchException e){
             System.out.println("No integer found.");
+            readValue = readInteger();
+        }
+        catch (InvalidNumberOfReviewersException e) {
+            System.out.println("Invalid number of reviewers.");
             readValue = readInteger();
         }
         return readValue;
@@ -148,10 +151,17 @@ public class UserInterface {
         }
     }
     
-    void isValidUiInput(int input) throws NotMenuOptionException{
+    private void isValidUiInput(int input) throws NotMenuOptionException{
         if(input > NUMBER_OF_OPTIONS || input < 0){
             throw new NotMenuOptionException();
         }
     }
+    
+    private void isValidReadNumberOfReviewers(int readValue) throws InvalidNumberOfReviewersException{
+             if(readValue > MAX_NUMREVIEWERS && readValue < MIN_NUMREVIEWERS){
+                 throw new InvalidNumberOfReviewersException();
+             }
+    }
+
 
 }
