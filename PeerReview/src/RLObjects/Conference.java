@@ -95,9 +95,18 @@ public class Conference {
     public ArrayList<Article> getArticlesSubmitted() {
         return articlesSubmitted;
     }
+    
+    public boolean hasArticlesNotAllocated() {
+        if (articlesSubmitted.size() > 0) return true;
+        else return false;
+    }
 
     public ArrayList<Article> getArticlesAllocated() {
         return articlesAllocated;
+    }
+    
+    public String getInitials(){
+        return initials;
     }
     
     
