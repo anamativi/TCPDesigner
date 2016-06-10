@@ -27,12 +27,13 @@ public class Researcher implements Comparable<Researcher> {
     @Override
     public int compareTo(Researcher compareResearcher) {
         int comparator;
-        comparator = compareResearcher.getAllocatedArticles().size();
+        comparator = this.allocatedArticles.size() - compareResearcher.getAllocatedArticles().size();
+        
         if (comparator == 0){
             return this.id-compareResearcher.getID();
         }
         else
-            return this.allocatedArticles.size()-comparator;
+            return comparator;
     }
 
     public ArrayList<ResearchTopic> getResearchTopics() {
