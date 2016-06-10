@@ -10,11 +10,8 @@ public class Conference {
     private ArrayList<Article> articlesSubmitted;
     private ArrayList<Article> articlesAllocated;
     private ArrayList<Researcher> committeeMembers;
-    //public Researcher coordinator; //Why do this even exists? It shalt be deleted
     
-    /**
-     * Default constructor
-     */
+
     public Conference() {
     }
     
@@ -25,9 +22,7 @@ public class Conference {
         this.articlesSubmitted = new ArrayList<>();
     }
 
-    /**
-     * @return
-     */
+
     public int getLowestSubmittedArticleID() {
         Collections.sort(this.articlesSubmitted);
         return articlesSubmitted.get(0).getID();
