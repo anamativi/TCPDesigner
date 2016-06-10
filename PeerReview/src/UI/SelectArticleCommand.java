@@ -19,16 +19,9 @@ public class SelectArticleCommand extends Command {
     @Override
     public void execute() {
         Service service = new Service();
-        Conference conference=null;
         UserInterface uInterface = new UserInterface();
         uInterface.showConferences();
-        String conferenceName = uInterface.readConference();
-        
-        try{
-            conference = service.readConference(conferenceName);
-        }catch(notFoundInDatabase e){
-            System.out.println(e.toString());
-        }
+        Conference conference = uInterface.readConference();
          
         service.selectArticle(conference, uInterface);
         
