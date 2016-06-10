@@ -22,7 +22,7 @@ public class SelectArticleCommand extends Command {
         Conference conference=null;
         UserInterface uInterface = new UserInterface();
         uInterface.showConferences();
-        String conferenceName = uInterface.readString();
+        String conferenceName = uInterface.readConference();
         
          try{
             conference = service.readConference(conferenceName);

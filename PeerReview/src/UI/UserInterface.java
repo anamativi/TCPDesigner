@@ -64,10 +64,15 @@ public class UserInterface {
         System.out.println(message);
     }
 
-    public String readString() {
+    public Conference readConference() {
+        Database db = Database.getInstance();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter conference:");
-        return scanner.nextLine();
+        
+        String conferenceName = scanner.nextLine();
+        Conference conference = db.readConference(conferenceName);
+        
+        return 
     }
 
     public int readInteger() {

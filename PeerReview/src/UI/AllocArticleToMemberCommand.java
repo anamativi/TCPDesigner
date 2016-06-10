@@ -20,7 +20,7 @@ public class AllocArticleToMemberCommand extends Command {
         Conference conference=null;
         Service service = new Service();
         UserInterface uInterface = new UserInterface();
-        String conferenceName = uInterface.readString();
+        String conferenceName = uInterface.readConference();
         try{
             nReviewers = uInterface.readInteger();
             conference = service.readConference(conferenceName);
