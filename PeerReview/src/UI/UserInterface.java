@@ -122,7 +122,7 @@ public class UserInterface {
             System.out.println("Invalid article ID.");
             article = readArticleId();
         }
-        catch (notFoundInDatabase ex) {
+        catch (notFoundInDatabase e) {
             System.out.println("There is no articles with the informed ID.");
             article = readArticleId();
         }
@@ -155,19 +155,19 @@ public class UserInterface {
         return researcher;
     }
 
-    public float readGrade() throws InvalidGradeException {
+    public float readGrade() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter grade for this article:");
         float readValue;
         try{
             readValue = scanner.nextInt();
-            boolean test = (readValue <= MAX_GRADE && readValue >=MIN_GRADE);
-            if(!test){
-                throw new InvalidGradeException();
-            }
+            isValidReadGrade(readValue);
         }
         catch(InputMismatchException e){
             System.out.println("No float found.");
+            readValue = readGrade();
+        } catch (InvalidGradeException ex) {
+            System.out.println("Invalid grade.");
             readValue = readGrade();
         }
         return readValue;
@@ -226,6 +226,12 @@ public class UserInterface {
     private void isValidReadNumberOfReviewers(int readValue) throws InvalidNumberOfReviewersException{
              if(readValue > MAX_NUMREVIEWERS || readValue < MIN_NUMREVIEWERS){
                  throw new InvalidNumberOfReviewersException();
+             }
+    }
+    
+    private void isValidReadGrade(float readValue) throws InvalidGradeException{
+             if(readValue > MAX_GRADE && readValue <MIN_GRADE){
+                 throw new InvalidGradeException();
              }
     }
     
