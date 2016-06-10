@@ -2,7 +2,7 @@ package UI;
 
 
 import Service.Service;
-import RLObjects.Article;
+import RLObjects.*;
 import Service.Database;
 import java.util.*;
 import java.util.Scanner;
@@ -12,7 +12,9 @@ public class UserInterface {
 
     public Service service;
     private final static float MIN_GRADE=-3;
-    private final static float MAX_GRADE=5;
+    private final static float MAX_GRADE=3;
+    private final static float MIN_NUMREVIEWERS=3;
+    private final static float MAX_NUMREVIEWERS=5;
 
     public UserInterface() {
     }
@@ -23,10 +25,8 @@ public class UserInterface {
     }
 
     public void getCommand() {
-        Scanner scanner = new Scanner(System.in);
         
         int loop = 1;
-        System.out.println("Choose:\n1 - Allocate Conference.\n2 - Rate Article.\n3 - Select Article.\n0 - Exit program.");
         while(loop != 0){
             try{
             loop = new Scanner(System.in).nextInt();
@@ -51,7 +51,6 @@ public class UserInterface {
                     break;
             }
         }
-        
     }
 
     public void showMessage(String message) {
@@ -67,34 +66,45 @@ public class UserInterface {
     public int readInteger() throws InvalidNumberOfReviewersException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number of reviewers:");
-        int valorLido;
+        int readValue;
         try{
-            valorLido = scanner.nextInt();
-            boolean test = (valorLido <= MAX_GRADE && valorLido >=MIN_GRADE);
+            readValue = scanner.nextInt();
+            boolean test = (readValue <= MAX_NUMREVIEWERS && readValue >=MIN_NUMREVIEWERS);
             if(!test){
                 throw new InvalidNumberOfReviewersException();
             }
         }
         catch(InputMismatchException e){
             System.out.println("No integer found.");
-            valorLido = readInteger();
+            readValue = readInteger();
         }
-        return valorLido;
+        return readValue;
     }
 
-    public float readFloat() {
-        // TODO implement here
-        return 0.0f;
+    public float readFloat() throws InvalidGradeException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter grade for this article:");
+        float readValue;
+        try{
+            readValue = scanner.nextInt();
+            boolean test = (readValue <= MAX_GRADE && readValue >=MIN_GRADE);
+            if(!test){
+                throw new InvalidGradeException();
+            }
+        }
+        catch(InputMismatchException e){
+            System.out.println("No integer found.");
+            readValue = readFloat();
+        }
+        return readValue;
     }
 
     public void showUI() {
-        // TODO implement here
-        //return null;
+        System.out.println("Choose:\n1 - Allocate Conference.\n2 - Rate Article.\n3 - Select Article.\n0 - Exit program.");
     }
 
     public void showArticlesList() {
-        // TODO implement here
-        //return null;
+
     }
 
     public void showArticleReviewersList(Article article) {
@@ -103,13 +113,19 @@ public class UserInterface {
     }
 
     public void showConferences() {
-        // TODO implement here
-        //return null;
+        Database db = Database.getInstance();
+        ArrayList<Conference> conferences = db.getConferences();
+        System.out.println("Conferences:");
+        for(Conference conf : conferences){
+            if(!(conf.getArticlesAllocated().isEmpty()))
+                System.out.println(conf.getInitials());
+        }
     }
 
     public void showArticlesWithGrades(ArrayList<Article> articlesList) {
-        // TODO implement here
-        //return null;
+        for(Article article : articlesList){
+            System.out.println("ID: " + article.getID() + " Article: " + article.getTitle() + "\nAuthor: " + article.getAuthor().getName() + "\nGrade: " + article.getMeanGrade());
+        }
     }
 
 }
