@@ -93,12 +93,16 @@ public class Article implements Comparable<Article>{
     
   
     public boolean wasAccepted(){
+        return meanGrade() >= MIN_ACCEPTED_GRADE;
+    }
+    
+    public float meanGrade(){
         float meanGrade=0;
         for(int i=0;i<reviewers.size();i++){
             meanGrade = meanGrade + grades.get(reviewers.get(i));
         }
         meanGrade = meanGrade/reviewers.size();
-        return meanGrade >= MIN_ACCEPTED_GRADE;
+        return meanGrade;
     }
     
     public String getTitle() {
