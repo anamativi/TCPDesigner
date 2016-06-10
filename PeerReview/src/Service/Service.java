@@ -25,13 +25,21 @@ public class Service {
         ui.showMessage("Iniciando alocação");
 
         for(int reviewTimes=1;reviewTimes <= numReviews;reviewTimes++){
-            System.out.println("LOOP FOR.");
+            //System.out.println("LOOP FOR.");
             while(conference.hasArticlesNotAllocated()){
-                System.out.println("LOOP while.");
+                //System.out.println("LOOP while.");
                 Article lowestID = conference.getLowestIDSubmittedArticle();
                 ArrayList<Researcher> eligibleReviewerList = conference.getCandidateReviewers(lowestID);
                 eligibleReviewerList = conference.sortReviewers(eligibleReviewerList);
-                conference.allocateArticle(lowestID, eligibleReviewerList.get(0));
+                try{
+                    conference.allocateArticle(lowestID, eligibleReviewerList.get(0));
+                }
+                catch(IndexOutOfBoundsException e){
+                System.out.println("Couldn't allocate enough reviewers");
+                break;
+                }
+                
+                
             }
             if(reviewTimes != numReviews) conference.switchList();
         }

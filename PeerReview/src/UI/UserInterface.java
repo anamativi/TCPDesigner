@@ -36,7 +36,7 @@ public class UserInterface {
                 System.out.println("Incorrect input type, must be integer. Enter Again.");
             }
             catch(NotMenuOptionException e){
-                System.out.println("The chouse input must be between 0 and " + NUMBER_OF_OPTIONS);
+                System.out.println("The choose input must be between 0 and " + NUMBER_OF_OPTIONS);
             }
             switch (loop) {
                 case 1:
@@ -193,7 +193,7 @@ public class UserInterface {
         else{
             System.out.println("Reviewers of " + article.getTitle() + ":");
             for(Researcher reviewer : article.getReviewers()){
-                System.out.println(reviewer.getName());
+                System.out.println("ID: " + reviewer.getID() + " Name: " + reviewer.getName());
             }            
         }
 
@@ -238,7 +238,7 @@ public class UserInterface {
     }
     
     private void isValidReadGrade(float readValue) throws InvalidGradeException{
-             if(readValue > MAX_GRADE && readValue <MIN_GRADE){
+             if(readValue > MAX_GRADE || readValue <MIN_GRADE){
                  throw new InvalidGradeException();
              }
     }
