@@ -23,9 +23,9 @@ public class Conference {
     }
 
 
-    public int getLowestSubmittedArticleID() {
+    public Article getLowestIDSubmittedArticle() {
         Collections.sort(this.articlesSubmitted);
-        return articlesSubmitted.get(0).getID();
+        return articlesSubmitted.get(0);
     }
 
     /**
