@@ -158,7 +158,7 @@ public class UserInterface {
     }
     
     private void isValidReadNumberOfReviewers(int readValue) throws InvalidNumberOfReviewersException{
-             if(readValue > MAX_NUMREVIEWERS && readValue < MIN_NUMREVIEWERS){
+             if(readValue > MAX_NUMREVIEWERS || readValue < MIN_NUMREVIEWERS){
                  throw new InvalidNumberOfReviewersException();
              }
     }
