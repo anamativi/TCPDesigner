@@ -2,7 +2,7 @@ package RLObjects;
 
 import java.util.*;
 
-public class Researcher {
+public class Researcher implements Comparable<Researcher> {
 
     private int id;
     private String name;
@@ -23,7 +23,17 @@ public class Researcher {
         this.researchTopic = researchTopic;
         this.allocatedArticles = new ArrayList<>();
     }
-
+    
+    @Override
+    public int compareTo(Researcher compareResearcher) {
+        int comparator;
+        comparator = compareResearcher.getAllocatedArticles().size();
+        if (comparator == 0){
+            return this.id-compareResearcher.getID();
+        }
+        else
+            return this.allocatedArticles.size()-comparator;
+    }
 
     public ArrayList<ResearchTopic> getResearchTopics() {
         return this.researchTopic;
@@ -46,6 +56,9 @@ public class Researcher {
         return this.id;
     }
 
+    public ArrayList<Article> getAllocatedArticles() {
+        return allocatedArticles;
+    }
 
     public void allocateArticle(Article article) {
         this.allocatedArticles.add(article);

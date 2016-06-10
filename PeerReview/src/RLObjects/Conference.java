@@ -47,8 +47,8 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> sortReviewers(ArrayList<Researcher> researchCandidatesList) {
-        // TODO implement here
-        return null;
+        Collections.sort(researchCandidatesList);
+        return researchCandidatesList;
     }
 
     /**
