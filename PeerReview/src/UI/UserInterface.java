@@ -3,108 +3,107 @@ package UI;
 
 import Service.Service;
 import RLObjects.Article;
+import Service.Database;
 import java.util.*;
+import java.util.Scanner;
 
-/**
- * 
- */
 public class UserInterface {
 
     public Service service;
 
-    /**
-     * Default constructor
-     */
     public UserInterface() {
     }
 
-    /**
-     * @param service 
-     * @return
-     */
     public void UserInterface(Service service) {
         // TODO implement here
         //return null;
     }
 
-    /**
-     * @return
-     */
     public void getCommand() {
-        // TODO implement here
-        //return null;
+        Scanner scanner = new Scanner(System.in);
+        
+        int loop = 1;
+        System.out.println("Choose:\n1 - Allocate Conference.\n2 - Rate Article.\n3 - Select Article.\n0 - Exit program.");
+        while(loop != 0){
+            try{
+            loop = new Scanner(System.in).nextInt();
+            }
+            catch(InputMismatchException e){
+                System.out.println("Incorrect input type, must be integer. Enter Again.");
+            }
+            switch (loop) {
+                case 1:
+                    AllocArticleToMemberCommand allocCommand = new AllocArticleToMemberCommand();
+                    allocCommand.execute();
+                    break;
+                case 2:
+                    RateArticleCommand rateCommand = new RateArticleCommand();
+                    rateCommand.execute();
+                    break;
+                case 3:
+                    SelectArticleCommand selectArticleCommand = new SelectArticleCommand();
+                    selectArticleCommand.execute();
+                    break;
+                default:
+                    break;
+            }
+        }
+        
     }
 
-    /**
-     * @param message 
-     * @return
-     */
     public void showMessage(String message) {
-        // TODO implement here
-        //return null;
+        System.out.println(message);
     }
 
-    /**
-     * @return
-     */
     public String readString() {
-        // TODO implement here
-        return "";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter conference:");
+        return scanner.nextLine();
     }
 
-    /**
-     * @return
-     */
-    public int readInteger() {
-        // TODO implement here
-        return 0;
+    public int readInteger() throws InvalidNumberOfReviewersException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of reviewers:");
+        int valorLido;
+        try{
+            valorLido = scanner.nextInt();
+            boolean test = (valorLido <= 5 && valorLido >=3);
+            if(!test){
+                throw new InvalidNumberOfReviewersException();
+            }
+        }
+        catch(InputMismatchException e){
+            System.out.println("No integer found.");
+            valorLido = readInteger();
+        }
+        return valorLido;
     }
 
-    /**
-     * @return
-     */
     public float readFloat() {
         // TODO implement here
         return 0.0f;
     }
 
-    /**
-     * @return
-     */
     public void showUI() {
         // TODO implement here
         //return null;
     }
 
-    /**
-     * @return
-     */
     public void showArticlesList() {
         // TODO implement here
         //return null;
     }
 
-    /**
-     * @param article 
-     * @return
-     */
     public void showArticleReviewersList(Article article) {
         // TODO implement here
         //return null;
     }
 
-    /**
-     * @return
-     */
     public void showConferences() {
         // TODO implement here
         //return null;
     }
 
-    /**
-     * @param articlesList 
-     * @return
-     */
     public void showArticlesWithGrades(ArrayList<Article> articlesList) {
         // TODO implement here
         //return null;

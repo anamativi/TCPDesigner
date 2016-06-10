@@ -252,5 +252,17 @@ public class Database {
     public void addResearchTopic(ResearchTopic researchTopic) {
         this.researchTopics.add(researchTopic);
     }
+    
+    
+    public Conference searchConference(Conference conference) throws notFoundInDatabase{
+        for(int i=0;i<conferences.size();i++){
+            if(conferences.get(i).getInitials().equals(conference.getInitials()))
+                return conferences.get(i);
+        }
+        throw new notFoundInDatabase("Conference not found.");
+    }
+    
+    
+    
 
 }

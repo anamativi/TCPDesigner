@@ -14,17 +14,31 @@ public class Service {
     public void Service() {
     }
 
-    /**
-     * @param conference 
-     * @param numReviewers 
-     * @param ui 
-     * @return
-     */
-    public void allocArticlesToMembers(Conference conference, int numReviewers, UserInterface ui) {
-        // TODO implement here
-        //return null;
-    }
 
+    public void allocArticlesToMembers(Conference conference, int numReviewers, UserInterface ui) {
+    Database db = Database.getInstance();
+        try{
+            db.searchConference(conference);
+        }catch(notFoundInDatabase e){
+        System.out.println(e.toString());
+        }
+        ui.showMessage("Iniciando alocação");
+        
+        
+            
+        
+        for(int i=0;i<numReviewers;i++){
+            while(conference.hasArticlesNotAllocated()){
+                Article lowestID = conference.getLowestIDSubmittedArticle();
+                ArrayList<Researcher> eligibleReviewerList = conference.getCandidateReviewers(lowestID);
+                eligibleReviewerList = conference.sortReviewers(eligibleReviewerList);
+                conference.allocateArticle(lowestID, eligibleReviewerList.get(0));
+            }
+           }
+        }
+
+        
+    
     /**
      * @param article 
      * @param reviewer 

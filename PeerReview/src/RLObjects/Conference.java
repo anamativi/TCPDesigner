@@ -23,9 +23,9 @@ public class Conference {
     }
 
 
-    public int getLowestSubmittedArticleID() {
+    public Article getLowestIDSubmittedArticle() {
         Collections.sort(this.articlesSubmitted);
-        return articlesSubmitted.get(0).getID();
+        return articlesSubmitted.get(0);
     }
 
     /**
@@ -103,9 +103,18 @@ public class Conference {
     public ArrayList<Article> getArticlesSubmitted() {
         return articlesSubmitted;
     }
+    
+    public boolean hasArticlesNotAllocated() {
+        if (articlesSubmitted.size() > 0) return true;
+        else return false;
+    }
 
     public ArrayList<Article> getArticlesAllocated() {
         return articlesAllocated;
+    }
+    
+    public String getInitials(){
+        return initials;
     }
     
     
