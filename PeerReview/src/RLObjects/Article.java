@@ -100,5 +100,9 @@ public class Article implements Comparable<Article>{
         meanGrade = meanGrade/reviewers.size();
         return meanGrade >= MIN_ACCEPTED_GRADE;
     }
+    
+    public String getTitle() {
+        return title;
+    }
 
 }
