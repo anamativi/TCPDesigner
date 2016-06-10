@@ -15,6 +15,7 @@ public class UserInterface {
     private final static float MAX_GRADE=3;
     private final static float MIN_NUMREVIEWERS=3;
     private final static float MAX_NUMREVIEWERS=5;
+    private final static float NUMBER_OF_OPTIONS=3;
 
     public UserInterface() {
     }
@@ -30,9 +31,13 @@ public class UserInterface {
         while(loop != 0){
             try{
             loop = new Scanner(System.in).nextInt();
+            isValidUiInput(loop);
             }
             catch(InputMismatchException e){
                 System.out.println("Incorrect input type, must be integer. Enter Again.");
+            }
+            catch(NotMenuOptionException e){
+                System.out.println("The chouse input must be btween 0 and " + NUMBER_OF_OPTIONS);
             }
             switch (loop) {
                 case 1:
@@ -140,6 +145,12 @@ public class UserInterface {
     public void showArticlesWithGrades(ArrayList<Article> articlesList) {
         for(Article article : articlesList){
             System.out.println("ID: " + article.getID() + " Article: " + article.getTitle() + "\nAuthor: " + article.getAuthor().getName() + "\nGrade: " + article.meanGrade());
+        }
+    }
+    
+    void isValidUiInput(int input) throws NotMenuOptionException{
+        if(input > NUMBER_OF_OPTIONS || input < 0){
+            throw new NotMenuOptionException();
         }
     }
 
