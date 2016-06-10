@@ -1,9 +1,6 @@
 package RLObjects;
 import java.util.*;
 
-import java.util.*;
-import Service.Database;
-
 public class Conference {
     
     private String initials;
@@ -35,10 +32,12 @@ public class Conference {
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
         ArrayList<Researcher> candidateReviewers = new ArrayList<>();
         for(int i = 0; i < committeeMembers.size(); i = i+1) {
-            if (!(article.getAuthor().equals(this.committeeMembers.get(i)))){
-                if (this.committeeMembers.get(i).getResearchTopics().contains(article.getResearchTopic())){
-                    if (!(article.getReviewers().contains(this.committeeMembers.get(i)))){
-                        candidateReviewers.add(this.committeeMembers.get(i));
+            Researcher currentCommiteeMember = committeeMembers.get(i);
+            ArrayList<ResearchTopic> researchTopicsOfCommiteeMember = currentCommiteeMember.getResearchTopics();
+            if (!(article.getAuthor().equals(currentCommiteeMember))){
+                if (researchTopicsOfCommiteeMember.contains(article.getResearchTopic())){
+                    if (!(article.getReviewers().contains(currentCommiteeMember))){
+                        candidateReviewers.add(currentCommiteeMember);
                     }
                 }
             }
@@ -112,7 +111,10 @@ public class Conference {
         return initials;
     }
     
-    
-    
-
+    public void switchList(){
+        ArrayList<Article> aux = this.articlesAllocated;
+        this.articlesAllocated = this.articlesSubmitted;
+        this.articlesSubmitted = aux;
+    }
+   
 }
