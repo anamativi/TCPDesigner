@@ -137,7 +137,7 @@ public class UserInterface {
         ArrayList<Conference> conferences = db.getConferences();
         System.out.println("Conferences:");
         for(Conference conf : conferences){
-            if(!(conf.getArticlesAllocated().isEmpty()))
+            if((conf.getArticlesAllocated().isEmpty()))
                 System.out.println(conf.getInitials());
         }
     }
