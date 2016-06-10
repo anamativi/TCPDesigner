@@ -7,9 +7,12 @@ import Service.Database;
 import java.util.*;
 import java.util.Scanner;
 
+
 public class UserInterface {
 
     public Service service;
+    private final static float MIN_GRADE=-3;
+    private final static float MAX_GRADE=5;
 
     public UserInterface() {
     }
@@ -67,7 +70,7 @@ public class UserInterface {
         int valorLido;
         try{
             valorLido = scanner.nextInt();
-            boolean test = (valorLido <= 5 && valorLido >=3);
+            boolean test = (valorLido <= MAX_GRADE && valorLido >=MIN_GRADE);
             if(!test){
                 throw new InvalidNumberOfReviewersException();
             }
