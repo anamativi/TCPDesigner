@@ -26,7 +26,7 @@ public class RateArticleCommand extends Command {
         
         uInterface.showArticlesList();
         try{
-           articleID = uInterface.readInteger(); 
+           articleID = uInterface.readNumberOfReviewers(); 
            article = service.readArticle(articleID);
         }catch(InvalidNumberOfReviewersException | notFoundInDatabase e){
             System.out.println(e.toString());
@@ -35,7 +35,7 @@ public class RateArticleCommand extends Command {
         
         uInterface.showArticleReviewersList(article);
         try{
-           researcherID = uInterface.readInteger(); 
+           researcherID = uInterface.readNumberOfReviewers(); 
            reviewer = service.readResearcher(researcherID);
         }catch(InvalidNumberOfReviewersException | notFoundInDatabase e){
             System.out.println(e.toString());

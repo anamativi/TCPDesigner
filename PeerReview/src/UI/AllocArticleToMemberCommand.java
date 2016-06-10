@@ -22,7 +22,7 @@ public class AllocArticleToMemberCommand extends Command {
         UserInterface uInterface = new UserInterface();
         String conferenceName = uInterface.readConference();
         try{
-            nReviewers = uInterface.readInteger();
+            nReviewers = uInterface.readNumberOfReviewers();
             conference = service.readConference(conferenceName);
         }catch(InvalidNumberOfReviewersException e){
             System.out.println(e.toString());

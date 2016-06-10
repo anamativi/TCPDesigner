@@ -7,6 +7,8 @@ import Service.Database;
 import Service.notFoundInDatabase;
 import java.util.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -82,7 +84,7 @@ public class UserInterface {
         return conference;
     }
 
-    public int readInteger() {
+    public int readNumberOfReviewers() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number of reviewers:");
         int readValue;
@@ -92,11 +94,56 @@ public class UserInterface {
         }
         catch(InputMismatchException e){
             System.out.println("No integer found.");
-            readValue = readInteger();
+            readValue = readNumberOfReviewers();
         }
         catch (InvalidNumberOfReviewersException e) {
             System.out.println("Invalid number of reviewers.");
-            readValue = readInteger();
+            readValue = readNumberOfReviewers();
+        }
+        return readValue;
+    }
+    
+    public Article readArticleId() {
+        Database db = Database.getInstance();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the article id:");
+        int readValue;
+        Article article;
+        try{
+            readValue = scanner.nextInt();
+            article = db.readArticle(readValue);
+            isArticleUnreviewed(article);
+        }
+        catch(InputMismatchException e){
+            System.out.println("No integer found.");
+            article = readArticleId();
+        }
+        catch (InvalidArticleException e) {
+            System.out.println("Invalid article ID.");
+            article = readArticleId();
+        }
+        catch (notFoundInDatabase ex) {
+            System.out.println("There is no articles with the informed ID.");
+            article = readArticleId();
+        }
+        return article;
+    }
+    
+    public int readResearcherId() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of reviewers:");
+        int readValue;
+        try{
+            readValue = scanner.nextInt();
+            isValidReadNumberOfReviewers(readValue);
+        }
+        catch(InputMismatchException e){
+            System.out.println("No integer found.");
+            readValue = readNumberOfReviewers();
+        }
+        catch (InvalidNumberOfReviewersException e) {
+            System.out.println("Invalid number of reviewers.");
+            readValue = readNumberOfReviewers();
         }
         return readValue;
     }
@@ -113,7 +160,7 @@ public class UserInterface {
             }
         }
         catch(InputMismatchException e){
-            System.out.println("No integer found.");
+            System.out.println("No float found.");
             readValue = readFloat();
         }
         return readValue;
@@ -126,10 +173,10 @@ public class UserInterface {
     public void showArticlesList() {
         Database db = Database.getInstance();
         ArrayList<Article> articles = db.getArticles();
-        System.out.println("Unrated articles:");
+        System.out.println("Select unrated articles by ID:");
         for(Article artic : articles){
-            if(artic.isGraded()){
-                System.out.println("ID: " + artic.getID() + " Article title: " + artic.getTitle());
+            if(!artic.isGraded()){
+                System.out.println("Article title: " + artic.getTitle() + "\nID: " + artic.getID());
             }
         }
     }
@@ -172,6 +219,12 @@ public class UserInterface {
     private void isValidReadNumberOfReviewers(int readValue) throws InvalidNumberOfReviewersException{
              if(readValue > MAX_NUMREVIEWERS || readValue < MIN_NUMREVIEWERS){
                  throw new InvalidNumberOfReviewersException();
+             }
+    }
+    
+    private void isArticleUnreviewed(Article readArticle) throws InvalidArticleException{
+             if(readArticle.isGraded()){
+                 throw new InvalidArticleException();
              }
     }
 
