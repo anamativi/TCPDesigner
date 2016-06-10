@@ -15,54 +15,51 @@ public class Service {
     }
 
 
-    public void allocArticlesToMembers(Conference conference, int numReviewers, UserInterface ui) {
-    Database db = Database.getInstance();
+    public void allocArticlesToMembers(Conference conference, int numReviews, UserInterface ui) {
+    
         try{
-            db.searchConference(conference);
+            readConference(conference);
         }catch(notFoundInDatabase e){
         System.out.println(e.toString());
         }
         ui.showMessage("Iniciando alocação");
         
-        
-            
-        
-        for(int i=0;i<numReviewers;i++){
+        for(int reviewTimes=1;reviewTimes <= numReviews;reviewTimes++){
             while(conference.hasArticlesNotAllocated()){
                 Article lowestID = conference.getLowestIDSubmittedArticle();
                 ArrayList<Researcher> eligibleReviewerList = conference.getCandidateReviewers(lowestID);
                 eligibleReviewerList = conference.sortReviewers(eligibleReviewerList);
                 conference.allocateArticle(lowestID, eligibleReviewerList.get(0));
             }
-           }
+            if(reviewTimes != numReviews) conference.switchList();
         }
+    }
 
         
     
-    /**
-     * @param article 
-     * @param reviewer 
-     * @param rate 
-     * @param ui
-     */
+
     public void rateArticle(Article article, Researcher reviewer, float rate, UserInterface ui) {
-        // TODO implement here                                                    
+        article.setGrade(reviewer, rate);                                                    
     }
 
-    /**
-     * @param conference 
-     * @param ui
-     */
+
     public void selectArticle(Conference conference, UserInterface ui) {
-        // TODO implement here
+        if(conference.hasUnreviewedArticles()) ui.showMessage("Alerta: Há artigos que não foram revisados.");
+        else{
+            ui.showArticlesWithGrades(conference.getAcceptedArticles());
+            ui.showArticlesWithGrades(conference.getRejectedArticles());
+        }
     }
 
-    /**
-     * @return
-     */
-    public Conference readConference() {
-        // TODO implement here
-        return null;
+
+    public Conference readConference(Conference conference) throws notFoundInDatabase{
+        Database db = Database.getInstance();
+        ArrayList<Conference> conferences = db.getConferences();
+        for(int i=0;i<conferences.size();i++){
+            if(conferences.get(i).getInitials().equals(conference.getInitials()))
+                return conferences.get(i);
+        }
+        throw new notFoundInDatabase("Conference not found.");
     }
 
     /**
