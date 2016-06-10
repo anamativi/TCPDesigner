@@ -33,7 +33,13 @@ public class Conference {
      * @return
      */
     public ArrayList<Researcher> getCandidateReviewers(Article article) {
-        // TODO implement here
+        if (!(article.getAuthor().equals(this.committeeMembers.get(0)))){
+            if (this.committeeMembers.get(0).getResearchTopics().contains(article.getResearchTopic())){
+                if (!(article.getReviewers().contains(this.committeeMembers.get(0)))){
+                    //keep going --> ordena candidatos
+                }
+            }
+    }
         return null;
     }
 

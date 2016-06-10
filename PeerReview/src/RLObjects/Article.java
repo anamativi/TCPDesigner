@@ -40,6 +40,10 @@ public class Article implements Comparable<Article>{
     public Researcher getAuthor() {
         return author;
     }
+    
+    public ArrayList<Researcher> getReviewers() {
+        return reviewers;
+    }
  
     public ResearchTopic getResearchTopic() {
         return researchTopic;
