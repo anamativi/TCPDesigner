@@ -40,7 +40,13 @@ public class RateArticleCommand extends Command {
         }catch(InvalidNumberOfReviewersException | notFoundInDatabase e){
             System.out.println(e.toString());
         }
-        grade = uInterface.readFloat(); 
+       
+        try{
+            grade = uInterface.readFloat(); 
+        }catch(InvalidGradeException e){
+            System.out.println(e.toString());
+        }
+        
  
         service.rateArticle(article, reviewer, grade, uInterface);
         
