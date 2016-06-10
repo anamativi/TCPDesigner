@@ -62,20 +62,25 @@ public class Service {
         throw new notFoundInDatabase("Conference not found.");
     }
 
-    /**
-     * @return
-     */
-    public Researcher readResearcher() {
-        // TODO implement here
-        return null;
+
+    public Article readArticle(int ID) throws notFoundInDatabase{
+        Database db = Database.getInstance();
+        ArrayList<Article> articles = db.getArticles();
+        for(int i=0;i<articles.size();i++){
+            if(articles.get(i).getID() == ID)
+                return articles.get(i);
+        }
+        throw new notFoundInDatabase("Article not found.");
     }
 
-    /**
-     * @return
-     */
-    public Article readArticle() {
-        // TODO implement here
-        return null;
+    public Researcher readResearcher(int ID) throws notFoundInDatabase{
+        Database db = Database.getInstance();
+        ArrayList<Researcher> researcher = db.getResearchers();
+        for(int i=0;i<researcher.size();i++){
+            if(researcher.get(i).getID() == ID)
+                return researcher.get(i);
+        }
+        throw new notFoundInDatabase("Researcher not found.");
     }
 
 }
