@@ -42,7 +42,7 @@ public class RateArticleCommand extends Command {
         }
        
         try{
-            grade = uInterface.readFloat(); 
+            grade = uInterface.readGrade(); 
         }catch(InvalidGradeException e){
             System.out.println(e.toString());
         }

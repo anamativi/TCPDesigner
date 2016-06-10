@@ -129,26 +129,33 @@ public class UserInterface {
         return article;
     }
     
-    public int readResearcherId() {
+    public Researcher readResearcherId(Article article) {
+        Database db = Database.getInstance();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number of reviewers:");
+        System.out.println("Enter the reviewer ID:");
         int readValue;
+        Researcher researcher;
         try{
             readValue = scanner.nextInt();
-            isValidReadNumberOfReviewers(readValue);
+            researcher = db.readResearcher(readValue);
+            isResearcherFromArticle(researcher,article);
         }
         catch(InputMismatchException e){
             System.out.println("No integer found.");
-            readValue = readNumberOfReviewers();
+            researcher = readResearcherId(article);
         }
-        catch (InvalidNumberOfReviewersException e) {
-            System.out.println("Invalid number of reviewers.");
-            readValue = readNumberOfReviewers();
+        catch (InvalidReviewerForArticleException e) {
+            System.out.println("This researcher is not reviewer of this article.");
+            researcher = readResearcherId(article);
         }
-        return readValue;
+        catch (notFoundInDatabase ex) {
+            System.out.println("There is no articles with the informed ID.");
+            researcher = readResearcherId(article);
+        }
+        return researcher;
     }
 
-    public float readFloat() throws InvalidGradeException {
+    public float readGrade() throws InvalidGradeException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter grade for this article:");
         float readValue;
@@ -161,7 +168,7 @@ public class UserInterface {
         }
         catch(InputMismatchException e){
             System.out.println("No float found.");
-            readValue = readFloat();
+            readValue = readGrade();
         }
         return readValue;
     }
@@ -225,6 +232,12 @@ public class UserInterface {
     private void isArticleUnreviewed(Article readArticle) throws InvalidArticleException{
              if(readArticle.isGraded()){
                  throw new InvalidArticleException();
+             }
+    }
+    
+    private void isResearcherFromArticle(Researcher readResearcher, Article article) throws InvalidReviewerForArticleException{
+             if(!(article.getReviewers().contains(readResearcher))){
+                 throw new InvalidReviewerForArticleException();
              }
     }
 
