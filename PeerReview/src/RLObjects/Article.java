@@ -104,5 +104,9 @@ public class Article implements Comparable<Article>{
         meanGrade = meanGrade/reviewers.size();
         return meanGrade;
     }
+    
+    public String getTitle() {
+        return title;
+    }
 
 }
