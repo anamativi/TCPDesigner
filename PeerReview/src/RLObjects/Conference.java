@@ -46,13 +46,12 @@ public class Conference {
         return null;
     }
 
-    /**
-     * @param lowestIdSubmittedArticle 
-     * @param firstSortedResearcher 
-     * @return
-     */
+
     public Article allocateArticle(Article lowestIdSubmittedArticle, Researcher firstSortedResearcher) {
-        // TODO implement here
+        articlesSubmitted.remove(lowestIdSubmittedArticle);
+        articlesAllocated.add(lowestIdSubmittedArticle);
+        firstSortedResearcher.allocateArticle(lowestIdSubmittedArticle);
+        lowestIdSubmittedArticle.allocateReviewer(firstSortedResearcher);
         return null;
     }
 
