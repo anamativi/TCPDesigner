@@ -4,6 +4,7 @@ package UI;
 import Service.Service;
 import RLObjects.*;
 import Service.Database;
+import Service.notFoundInDatabase;
 import java.util.*;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -70,9 +71,16 @@ public class UserInterface {
         System.out.println("Enter conference:");
         
         String conferenceName = scanner.nextLine();
-        Conference conference = db.readConference(conferenceName);
+        Conference conference;
+        try{
+            conference = db.readConference(conferenceName);            
+        }
+        catch (notFoundInDatabase ex) {
+            System.out.println("This conference was not found in database.");
+            conference = readConference();
+        }
         
-        return 
+        return conference;
     }
 
     public int readInteger() {
