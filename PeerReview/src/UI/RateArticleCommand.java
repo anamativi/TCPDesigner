@@ -21,14 +21,10 @@ public class RateArticleCommand extends Command {
         Service service = new Service();
   
         uInterface.showArticlesList();
-        int articleID = uInterface.readNumberOfReviewers(); 
-        Article article = service.readArticle(articleID);
-  
-        
-        
+        Article article = uInterface.readArticleId();
+
         uInterface.showArticleReviewersList(article);
-        int researcherID = uInterface.readNumberOfReviewers(); 
-        Researcher reviewer = service.readResearcher(researcherID);
+        Researcher reviewer = uInterface.readResearcherId(article);
        
 
         float grade = uInterface.readGrade(); 
