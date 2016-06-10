@@ -1,9 +1,6 @@
 package RLObjects;
 import java.util.*;
 
-import java.util.*;
-import Service.Database;
-
 public class Conference {
     
     private String initials;
