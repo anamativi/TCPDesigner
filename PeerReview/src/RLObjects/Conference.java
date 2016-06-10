@@ -114,7 +114,10 @@ public class Conference {
         return initials;
     }
     
-    
-    
-
+    public void switchList(){
+        ArrayList<Article> aux = this.articlesAllocated;
+        this.articlesAllocated = this.articlesSubmitted;
+        this.articlesSubmitted = aux;
+    }
+   
 }
