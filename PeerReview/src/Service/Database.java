@@ -12,7 +12,7 @@ public class Database {
     private ArrayList<Researcher> researchers;
     private ArrayList<Conference> conferences;
     private ArrayList<Article> articles;
-    private ArrayList<University> universities;
+    private ArrayList<String> universities;
     private ArrayList<ResearchTopic> researchTopics;
     
     private static Database db = new Database();
@@ -36,9 +36,6 @@ public class Database {
     /**
      */
     public final void initData() {
-            University ufrgs = new University("UFRGS");
-            University usp = new University("USP");
-            University ufrj = new University("UFRJ");
             
             ResearchTopic softwareProductLines = new ResearchTopic("Software Product Lines");
             ResearchTopic softwareReuse = new ResearchTopic("Software Reuse");
@@ -89,16 +86,16 @@ public class Database {
             carlosTopics.add(modularity);
             carlosTopics.add(softwareTesting);
             
-            Researcher joao = new Researcher(1, "João", ufrgs, joaoTopics);
-            Researcher ana = new Researcher(2, "Ana", usp, anaTopics);
-            Researcher manoel = new Researcher(3, "Manoel", ufrgs, manoelTopics);
-            Researcher joana = new Researcher(4, "Joana", ufrj, joanaTopics);
-            Researcher miguel = new Researcher(5, "Miguel", ufrgs, miguelTopics);
-            Researcher beatriz = new Researcher(6, "Beatriz", ufrj, beatrizTopics);
-            Researcher suzana = new Researcher(7, "Suzana", ufrgs, suzanaTopics);
-            Researcher natasha = new Researcher(8, "Natasha", ufrj, natashaTopics);
-            Researcher pedro = new Researcher(9, "Pedro", usp, pedroTopics);
-            Researcher carlos = new Researcher(10, "Carlos", usp, carlosTopics);
+            Researcher joao = new Researcher(1, "João", "UFRGS", joaoTopics);
+            Researcher ana = new Researcher(2, "Ana", "USP", anaTopics);
+            Researcher manoel = new Researcher(3, "Manoel", "UFRGS", manoelTopics);
+            Researcher joana = new Researcher(4, "Joana", "UFRJ", joanaTopics);
+            Researcher miguel = new Researcher(5, "Miguel", "UFRGS", miguelTopics);
+            Researcher beatriz = new Researcher(6, "Beatriz", "UFRJ", beatrizTopics);
+            Researcher suzana = new Researcher(7, "Suzana", "UFRGS", suzanaTopics);
+            Researcher natasha = new Researcher(8, "Natasha", "UFRJ", natashaTopics);
+            Researcher pedro = new Researcher(9, "Pedro", "USP", pedroTopics);
+            Researcher carlos = new Researcher(10, "Carlos", "USP", carlosTopics);
             
             ArrayList<Researcher> icseResearchers = new ArrayList<>();
             icseResearchers.add(joao);
@@ -141,9 +138,9 @@ public class Database {
             Article article10 = new Article(10,"Architecture Comformance",pedro,icse,softwareArchitecture);
             Article article11 = new Article(11,"Structural Testing",carlos,icse,softwareTesting);
             
-            this.addUniversity(ufrgs);
-            this.addUniversity(ufrj);           
-            this.addUniversity(usp);    
+            this.addUniversity("UFRGS");
+            this.addUniversity("UFRJ");           
+            this.addUniversity("USP");    
             
             this.addResearchTopic(aspectOrientedProgramming);
             this.addResearchTopic(modularity);
@@ -246,7 +243,7 @@ public class Database {
     /**
      * @param university 
      */
-    public void addUniversity(University university) {
+    public void addUniversity(String university) {
         this.universities.add(university);
     }
 
